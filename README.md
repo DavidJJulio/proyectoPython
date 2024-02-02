@@ -35,3 +35,12 @@ ORDEN DEL DESARROLLO:
 4. CRUD de Campers:
 
     Se crearan a los campers, se les asignara un Trainer, salon y ruta. 
+
+
+ARCHIVOS JSON:
+
+Archivo Json para campers
+Archivo Json para Rutas
+Archivo Json para Trainers
+Archivo Json para notas y filtros
+Archivo Json para Horarios, Salones y grupos
