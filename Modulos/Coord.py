@@ -8,8 +8,8 @@ Coordinacion = ("""
 - - - - - - - - - COORDINACION - - - - - - - - --
 -- - - - - - - - - - - - - - - - - - - - - - - --
 -- - - - - - - - - - - - - - - - - - - - - - - --
-        1. RUTAS            2.ADMINISTRACION
-        3. INFORMES
+        1. RUTAS            2. ADMINISTRACION
+        3. INFORMES         4. SALIR
 
 
 """)
@@ -27,8 +27,7 @@ def sistemaco():
           administracion()
          case 3:
           informes()
-         case 4:
-          pass
+         case 4: bandera = False
     
 
 

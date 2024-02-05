@@ -10,6 +10,7 @@ Trainers = ("""
 - - - - - - - - - - - - - - - - - - - - - - - - -
 1. CREAR TRAINER              2. BUSCAR TRAINER
 3. ACTUALIZAR TRAINER         4. ELIMINAR TRAINER
+5. SALIR
 """)
 
 def sistemat():
@@ -27,6 +28,7 @@ def sistemat():
           actualizartrainer()
          case 4:
           eliminartrainer()
+         case 5: bandera = False
     
     
 

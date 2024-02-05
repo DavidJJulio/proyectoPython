@@ -28,9 +28,9 @@ def portada():
         print(Portada)
         opc = int(input("¿A que opcion desea ingresar?: "))
         match(opc):
-         case 3: 
+         case 2: 
           CRUDC.sistemac()
-         case 2:
+         case 3:
           CRUDT.sistemat()
          case 1:
           Coord.sistemaco()

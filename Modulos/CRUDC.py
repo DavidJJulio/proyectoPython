@@ -9,7 +9,8 @@ Campers = ("""
 - - - - - - - - - - - - - - - - - - - - - - - - -
 - - - - - - - - - - - - - - - - - - - - - - - - -
 1. CREAR CAMPER                 2. BUSCAR CAMPER
-3. ACTUALIZAR CAMPER            3. ELIMINAR CAMPER
+3. ACTUALIZAR CAMPER            4. ELIMINAR CAMPER
+5. SALIR
 """)
 
 def sistemac():
@@ -27,6 +28,7 @@ def sistemac():
           actualizarcamper()
          case 4:
           eliminarcamper()
+         case 5: bandera = False
 
 
 
