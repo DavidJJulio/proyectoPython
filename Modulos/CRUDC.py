@@ -71,7 +71,15 @@ def buscarcamper():
 
 
         for i, item in enumerate(Lista):
-           print(f"\n{Lista[i]}")
+           print(f"""
+--------------
+{Lista[i]["Nombre"]} {Lista[i]["Apellido"]}
+{Lista[i]["Edad"]} Años, Codigo {Lista[i]["Codigo"]}
+Genero {Lista[i]["Genero"]} 
+{Lista[i]["Numero"]}
+--------------
+
+""")
            i+=1
 
 
