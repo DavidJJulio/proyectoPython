@@ -28,13 +28,29 @@ def sistemat():
           actualizartrainer()
          case 4:
           eliminartrainer()
-         case 5: bandera = False
+         case 5: 
+          bandera = False
     
     
 
 
 def creartrainer():
-    return 0
+    with open('JsonTrainers.json', 'r') as f:
+        Lista = json.loads(f.read())
+        print(type(Lista))
+        Lista.append({
+           "Nombre" : input("Ingrese el nombre del trainer: "),
+           "Apellido" : input("Ingrese el apellido del trainer: "),
+           "Edad" : input("Ingrese la edad del trainer: "),
+           "Genero" : input("Ingrese el genero del trainer: "),
+           "Numero" : input("Ingrese el numero telefonico del trainer: ")
+        })
+        
+    with open('JsonTrainers.json', 'w') as file:
+        json.dump(Lista, file, indent = 4)
+        file.close()
+
+
 def buscartrainer():
     return 0
 def actualizartrainer():
