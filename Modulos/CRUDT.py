@@ -14,9 +14,9 @@ Trainers = ("""
 """)
 
 def sistemat():
- os.system('clear')
  bandera = True
  while bandera:
+        os.system('clear')
         print(Trainers)
         opc = int(input("¿A que opcion desea ingresar?: "))
         match(opc):

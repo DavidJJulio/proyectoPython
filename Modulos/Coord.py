@@ -15,9 +15,9 @@ Coordinacion = ("""
 """)
 
 def sistemaco():
- os.system('clear')
  bandera = True
  while bandera:
+        os.system('clear')
         print(Coordinacion)
         opc = int(input("¿A que opcion desea ingresar?: "))
         match(opc):

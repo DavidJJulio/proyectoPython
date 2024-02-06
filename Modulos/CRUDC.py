@@ -14,9 +14,9 @@ Campers = ("""
 """)
 
 def sistemac():
- os.system('clear')
  bandera = True
  while bandera:
+        os.system('clear')
         print(Campers)
         opc = int(input("¿A que opcion desea ingresar?: "))
         match(opc):
@@ -36,8 +36,8 @@ def sistemac():
 def crearcamper():
     with open('JsonCampers.json', 'r') as f:
         Lista = json.loads(f.read())
-        print(type(Lista))
         x = len(Lista)
+        os.system('clear')
         Lista.append({
            "Nombre" : input("Ingrese el nombre del Camper: "),
            "Apellido" : input("Ingrese el apellido del Camper: "),
@@ -53,18 +53,37 @@ def crearcamper():
            "Estado" : input("Ingrese el estado del Camper: "),
            "Codigo" : x + 1
         })
-        if Lista[x]["Edad"] < 18:
+        if Lista[x-1]["Edad"] < 18:
            Lista[x].update({
               "Acudiente" : input("Ingrese el nombre de su acudiente: "),
               "CelAcudiente" : input("Ingrese el numero telefonico de el acudiente: ")
               })
-        
+
     with open('JsonCampers.json', 'w') as file:
         json.dump(Lista, file, indent = 4)
         file.close()
         
 def buscarcamper():
-    return 0
+        with open('JsonCampers.json', 'r') as f:
+           Lista = json.loads(f.read())
+           x = len(Lista)
+           f.close()
+
+
+        for i, item in enumerate(Lista):
+           print(f"\n{Lista[i]}")
+           i+=1
+
+
+        busqueda = int(input("Ingrese el codigo del estudiante: "))
+        if busqueda == Lista[x-1]["Codigo"]:
+           os.system('clear')
+           for i,val in Lista[x-1].items():
+              print(f"{i}, : {val}")
+           x = input("")
+        else:
+           print("No existe este estudiante")
+
 def actualizarcamper():
     return 0
 def eliminarcamper():
