@@ -9,9 +9,8 @@ Campers = ("""
 - - - - - - - - - - CAMPERS - - - - - - - - - - -
 - - - - - - - - - - - - - - - - - - - - - - - - -
 - - - - - - - - - - - - - - - - - - - - - - - - -
-1. CREAR CAMPER                 2. BUSCAR CAMPER
-3. ACTUALIZAR CAMPER            4. ELIMINAR CAMPER
-5. SALIR
+1. CREAR CAMPER                 2. ELIMINAR CAMPER
+3. SALIR
 """)
 
 def sistemac():
@@ -23,15 +22,8 @@ def sistemac():
         match(opc):
          case 1: 
           funciones.crearcamper()
-         # case 2:
-         #  buscarcamper()
-         # case 3:
-         #  actualizarcamper()
-         # case 4:
-         #  eliminarcamper()
-         # case 5: 
-         #  bandera = False
-
+         case 2:
+          funciones.eliminarcamper()
 
 
 

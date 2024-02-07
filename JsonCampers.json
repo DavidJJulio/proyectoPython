@@ -1,17 +1,1 @@
-[
-    {
-        "Nombre": "David",
-        "Apellido": "Julio",
-        "Edad": 17,
-        "Genero": "Masculino",
-        "Numero": [
-            {
-                "Celular": "3105288656"
-            }
-        ],
-        "Estado": "",
-        "id": "1092732487",
-        "Acudiente": "Alexander",
-        "CelAcudiente": "3135328897"
-    }
-]
+[]
