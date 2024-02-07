@@ -11,7 +11,7 @@ Trainers = ("""
 - - - - - - - - - - - - - - - - - - - - - - - - -
 - - - - - - - - - - - - - - - - - - - - - - - - -
 1. CREAR TRAINER              2. ELIMINAR TRAINER
-3. SALIR
+3. ACTUALIZAR TRAINER         4. SALIR
 """)
 
 def sistemat():
@@ -21,18 +21,17 @@ def sistemat():
         print(Trainers)
         try:
             opc = int(input("¿A que opcion desea ingresar?: "))
-            if(3 >= opc > 0):
+            if(4 >= opc > 0):
                match(opc):
                   case 1: 
                      funciones.creartrainer()
                   case 2:
                      funciones.eliminartrainer()
-                  # case 3:
-                     #  actualizartrainer()
-                  # case 4:
-                     #  eliminartrainer()
-                  # case 5: 
-                     #  bandera = False
+                  case 3:
+                     funciones.actualizartrainer()
+                  case 4:
+                     bandera = False
+
         except: 
          print("Ingrese un numero no un caracter.")
          x = input("Enter para continuar...")

@@ -22,7 +22,10 @@ def creartrainer():
            "Horario" : [    
                             input("\n\n\n\n  ---- HORARIOS LABORALES ----\n1. ---- 6:00 AM - 10:00 AM ----\n2. ---- 10:00 AM - 2:00 PM ----\n3. ---- 2:00 PM - 6:00 PM  ----\n4. ---- 6:00 PM - 10:00 PM ----\n\n  Seleccione un horario: ") 
                             for i in range(int(input("Cuantas jornadas trabajará el trainer? (1 Jornada = 4 horas): ")))
-           ]
+           ],
+           "Salon" : "",
+           "Ruta" : ""
+
         })
 
 
@@ -47,7 +50,11 @@ def crearcamper():
               for x in range((int(input("¿Cuantos numeros de contacto tiene?: "))))
            ],
            "Estado" : "",
-           "id" : int(input("Ingrese el numero de identidad del Camper: "))
+           "id" : int(input("Ingrese el numero de identidad del Camper: ")),
+           "Salon" : "",
+           "Trainer" : "",
+           "Horario" : "",
+           "Ruta" : ""
         })
         if Lista[x-1]["Edad"] < 18:
            Lista[x].update({
