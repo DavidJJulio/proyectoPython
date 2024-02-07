@@ -50,8 +50,8 @@ def crearcamper():
               }
               for x in range((int(input("¿Cuantos numeros de contacto tiene?: "))))
            ],
-           "Estado" : input("Ingrese el estado del Camper: "),
-           "Codigo" : x + 1
+           "Estado" : "",
+           "id" : input("Ingrese el numero de identidad del Camper: ")
         })
         if Lista[x-1]["Edad"] < 18:
            Lista[x].update({
@@ -74,20 +74,26 @@ def buscarcamper():
            print(f"""
 --------------
 {Lista[i]["Nombre"]} {Lista[i]["Apellido"]}
-{Lista[i]["Edad"]} Años, Codigo {Lista[i]["Codigo"]}
+{Lista[i]["Edad"]} Años, id {Lista[i]["id"]}
 Genero {Lista[i]["Genero"]} 
-{Lista[i]["Numero"]}
+Numero {Lista[i]["Numero"]}
 --------------
 
 """)
            i+=1
 
 
-        busqueda = int(input("Ingrese el codigo del estudiante: "))
-        if busqueda == Lista[x-1]["Codigo"]:
+        busqueda = (input("Ingrese el id del estudiante: "))
+        if busqueda == Lista[x-1]["id"]:
            os.system('clear')
            for i,val in Lista[x-1].items():
-              print(f"{i}, : {val}")
+              print(f"""
+--------------
+{Lista[i]['Nombre']} {Lista[i]['Apellido']}
+{Lista[i]['Edad']} Años, id {Lista[i]['id']}
+Genero {Lista[i]['Genero']} 
+Numero {Lista[i]['Numero']}
+--------------""")
            x = input("")
         else:
            print("No existe este estudiante")
