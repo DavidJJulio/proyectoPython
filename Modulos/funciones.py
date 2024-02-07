@@ -17,7 +17,6 @@ def creartrainer():
               }
               for x in range(int(input("¿Cuantos numeros de contacto tiene?: ")))
            ],
-           "Estado" : "",
            "id" : int((input("Ingrese el numero de identidad del Trainer: "))),
            "Horario" : [    
                             input("\n\n\n\n  ---- HORARIOS LABORALES ----\n1. ---- 6:00 AM - 10:00 AM ----\n2. ---- 10:00 AM - 2:00 PM ----\n3. ---- 2:00 PM - 6:00 PM  ----\n4. ---- 6:00 PM - 10:00 PM ----\n\n  Seleccione un horario: ") 
@@ -54,10 +53,12 @@ def crearcamper():
            "Salon" : "",
            "Trainer" : "",
            "Horario" : "",
-           "Ruta" : ""
+           "Ruta" : "",
+           "Estado" : ""
         })
+        x = len(Lista)
         if Lista[x-1]["Edad"] < 18:
-           Lista[x].update({
+           Lista[x-1].update({
               "Acudiente" : input("Ingrese el nombre de su acudiente: "),
               "CelAcudiente" : input("Ingrese el numero telefonico de el acudiente: ")
               })
@@ -231,3 +232,25 @@ Edad {Lista[i]['Edad']}, {Lista[i]['id']}
     with open('JsonTrainers.json', 'w') as file:
             json.dump(Lista, file, indent=4)
             file.close()
+def crearmodulos():
+            with open('JsonModulos.json', 'r') as f:
+                Lista = json.loads(f.read())
+                f.close()
+                Lista.append({
+                 "Nombre del modulo" : input("Ingrese el nombre del modulo: "),
+                 "Temas del modulo" : [
+                           input(f"Ingrese el tema {i+1}: ")
+                           for i in range(int(input("¿Cuantos temas tendra el modulo?: ")))
+                 ]
+            })
+            with open('JsonModulos.json', 'w') as file:
+                 json.dump(Lista, file, indent=4)
+  
+def crearrutas():
+     pass
+def asignarsalon():
+     pass
+def filtros():
+     pass
+def notas():
+     pass

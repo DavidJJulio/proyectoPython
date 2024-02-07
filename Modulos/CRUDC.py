@@ -23,11 +23,11 @@ def sistemac():
             if(4 >= opc > 0):
                match(opc):
                   case 1: 
-                     funciones.creartrainer()
+                     funciones.crearcamper()
                   case 2:
-                     funciones.eliminartrainer()
+                     funciones.eliminarcamper()
                   case 3:
-                     funciones.actualizartrainer()
+                     funciones.actualizarcamper()
                   case 4:
                      bandera = False
 

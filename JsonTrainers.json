@@ -1,1 +1,18 @@
-[]
+[
+    {
+        "Nombre": "Miguel",
+        "Apellido": "Castro",
+        "Edad": 25,
+        "Genero": "Masculino",
+        "Numero": [],
+        "Estado": "",
+        "id": 1070843572,
+        "Horario": [
+            "1",
+            "2",
+            "3"
+        ],
+        "Salon": "",
+        "Ruta": ""
+    }
+]

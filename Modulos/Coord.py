@@ -1,5 +1,6 @@
 import os
 import json
+from Modulos import funciones
 os.system('clear')
 Coordinacion = ("""
 
@@ -22,21 +23,12 @@ def sistemaco():
         opc = int(input("¿A que opcion desea ingresar?: "))
         match(opc):
          case 1: 
-          rutas()
-         case 2:
-          administracion()
-         case 3:
-          informes()
-         case 4: bandera = False
+              funciones.crearmodulos()
+         case 2: 
+              pass
+            
     
 
 
 
-
-def rutas():
-    return 0
-def administracion():
-    return 0
-def informes():
-    return 0
 
