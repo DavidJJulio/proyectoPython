@@ -14,6 +14,18 @@ Coordinacion = ("""
 
 
 """)
+Rutas = ("""
+- - - - - - - - - - - - - - - - - - - - -
+- - - - - - - - - - - - - - - - - - - - -
+- - - - - - - - - RUTAS - - - - - - - - -
+- - - - - - - - - - - - - - - - - - - - -
+- - - - - - - - - - - - - - - - - - - - -
+    1. CREAR MODULO     2. CREAR RUTA
+
+
+
+ 
+         """)
 
 def sistemaco():
  bandera = True
@@ -23,7 +35,14 @@ def sistemaco():
         opc = int(input("¿A que opcion desea ingresar?: "))
         match(opc):
          case 1: 
-              funciones.crearmodulos()
+              os.system('clear')
+              print(Rutas)
+              opc1 = int(input("¿A que opcion desea ingresar?: "))
+              match(opc1):
+                   case 1:
+                        funciones.crearmodulos()
+                   case 2:
+                        funciones.crearrutas()
          case 2: 
               pass
             

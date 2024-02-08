@@ -236,17 +236,19 @@ def crearmodulos():
             with open('JsonModulos.json', 'r') as f:
                 Lista = json.loads(f.read())
                 f.close()
+                x = len(Lista)
                 Lista.append({
                  "Nombre del modulo" : input("Ingrese el nombre del modulo: ").upper().replace(" ",""),
                  "Temas del modulo" : [
                            input(f"Ingrese el tema {i+1}: ")
                            for i in range(int(input("¿Cuantos temas tendra el modulo?: ")))
-                 ]
+                 ],
+                 "Codigo" : (x+1)
             })
             with open('JsonModulos.json', 'w') as file:
-                 json.dump(Lista, file, indent=4)
-  
+                 json.dump(Lista, file, indent=4) 
 def crearrutas():
+     n = 0
      with open('JsonModulos.json', 'r') as f:
          Modulos = json.loads(f.read())
          f.close()
@@ -254,6 +256,36 @@ def crearrutas():
      with open('JsonRutas.json', 'r') as f:
          Rutas = json.loads(f.read())
          f.close
+     x = len(Rutas)
+     print("""
+---------------------------
+----MODULOS DISPONIBLES----
+---------------------------
+           """)
+     for i,item in enumerate(Modulos):
+         n+=1
+         print(f"""
+---------------------------
+{n}.{Modulos[x]['Nombre del modulo']}
+---------------------------
+              """)
+     Rutas.append(
+         {
+             "Nombre de la ruta" : input("Ingrese el nombre de la ruta: ").upper().replace(" ",""),
+             "Modulos" : []
+         }
+     )
+     z = 0
+     for i in range(int(input("Cuantos modulos añadirá a la ruta?: "))):
+        z +=1
+        mod = int(input(f"Modulo n{z}: "))
+        for i,item in enumerate(Modulos):
+            if(mod == Modulos[i]["Codigo"]):
+                Rutas[x]["Modulos"].append(Modulos[i])
+     
+     with open('JsonRutas.json', 'w') as file:
+         json.dump(Rutas, file, indent=4)
+     print(type(Rutas))
 def asignarsalon():
      pass
 def filtros():

@@ -3,7 +3,18 @@
         "Nombre del modulo": "FUNDAMENTOSDEPROGRAMACION",
         "Temas del modulo": [
             "Pseint",
-            "Python"
-        ]
+            "Python",
+            "Algoritmia"
+        ],
+        "Codigo": 1
+    },
+    {
+        "Nombre del modulo": "PROGRAMACIONWEB",
+        "Temas del modulo": [
+            "HTML",
+            "CSS",
+            "C#"
+        ],
+        "Codigo": 2
     }
 ]
