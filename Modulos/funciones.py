@@ -23,7 +23,8 @@ def creartrainer():
                             for i in range(int(input("Cuantas jornadas trabajará el trainer? (1 Jornada = 4 horas): ")))
            ],
            "Salon" : "",
-           "Ruta" : ""
+           "Ruta" : "",
+           "Estado" : input("Ingrese el estado del camper\n1. pre-inscrito\n2. : ")
 
         })
 
@@ -287,8 +288,33 @@ def crearrutas():
          json.dump(Rutas, file, indent=4)
      print(type(Rutas))
 def asignarsalon():
-     pass
+     with open('JsonSalones.json', 'r') as f:
+          Salones = json.loads(f.read())
+          f.close()
+     with open('JsonCampers.json', 'r') as f:
+          Campers = json.loads(f.read())
+          f.close()
+     with open('JsonRutas.json', 'r') as f:
+          Rutas = json.loads(f.read())
+          f.close()
+     with open('JsonTrainers.json', 'r') as f:
+          Trainers = json.loads(f.read())
+          f.close()
+     print(Salones)
+     x = int(input(""))
+     if(x == 1):
+          Salones[0]["Horario"]["1"] = False
+     if(Salones[0]["Horario"]["1"] == False):
+          print("LETSGOOOOOO")
+          x = input("")
+     with open('JsonSalones.json', 'w') as file:
+          json.dump(Salones, file, indent=4)
+
 def filtros():
      pass
 def notas():
      pass
+
+
+
+

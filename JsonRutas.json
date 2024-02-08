@@ -21,5 +21,28 @@
                 "Codigo": 2
             }
         ]
+    },
+    {
+        "Nombre de la ruta": "JAVA",
+        "Modulos": [
+            {
+                "Nombre del modulo": "FUNDAMENTOSDEPROGRAMACION",
+                "Temas del modulo": [
+                    "Pseint",
+                    "Python",
+                    "Algoritmia"
+                ],
+                "Codigo": 1
+            },
+            {
+                "Nombre del modulo": "PROGRAMACIONWEB",
+                "Temas del modulo": [
+                    "HTML",
+                    "CSS",
+                    "C#"
+                ],
+                "Codigo": 2
+            }
+        ]
     }
 ]

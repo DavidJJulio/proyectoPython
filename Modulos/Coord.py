@@ -44,7 +44,7 @@ def sistemaco():
                    case 2:
                         funciones.crearrutas()
          case 2: 
-              pass
+              funciones.asignarsalon()
             
     
 
