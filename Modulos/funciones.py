@@ -237,7 +237,7 @@ def crearmodulos():
                 Lista = json.loads(f.read())
                 f.close()
                 Lista.append({
-                 "Nombre del modulo" : input("Ingrese el nombre del modulo: "),
+                 "Nombre del modulo" : input("Ingrese el nombre del modulo: ").upper().replace(" ",""),
                  "Temas del modulo" : [
                            input(f"Ingrese el tema {i+1}: ")
                            for i in range(int(input("¿Cuantos temas tendra el modulo?: ")))
@@ -247,7 +247,13 @@ def crearmodulos():
                  json.dump(Lista, file, indent=4)
   
 def crearrutas():
-     pass
+     with open('JsonModulos.json', 'r') as f:
+         Modulos = json.loads(f.read())
+         f.close()
+         
+     with open('JsonRutas.json', 'r') as f:
+         Rutas = json.loads(f.read())
+         f.close
 def asignarsalon():
      pass
 def filtros():
