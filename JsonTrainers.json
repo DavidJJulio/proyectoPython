@@ -1,18 +1,2 @@
 [
-    {
-        "Nombre": "miguel",
-        "Apellido": "castro",
-        "Edad": 28,
-        "Genero": "masculino",
-        "Numero": [],
-        "id": 2130912321,
-        "Horario": {
-            "1": true,
-            "2": true,
-            "3": true,
-            "4": true
-        },
-        "Salon": "",
-        "Ruta": ""
-    }
 ]

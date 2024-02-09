@@ -223,7 +223,7 @@ Edad {Lista[i]['Edad']}, {Lista[i]['id']}
             file.close()
 def actualizarcamper():
     bandera = True
-    with open('JsonCamper.json', 'r') as f:
+    with open('JsonCampers.json', 'r') as f:
         Lista = json.loads(f.read())
         os.system('clear')
         f.close()
@@ -264,7 +264,7 @@ Edad {Lista[i]['Edad']}, {Lista[i]['id']}
            "Salon" : "",
            "Trainer" : "",
            "Horario" : {
-               "1" : True,
+               "1" : True, 
                "2" : True,
                "3" : True,
                "4" : True},
@@ -288,7 +288,7 @@ Edad {Lista[i]['Edad']}, {Lista[i]['id']}
                     print("ok")
                     n = input("")
                     bandera = False
-    with open('JsonTrainers.json', 'w') as file:
+    with open('JsonCampers.json', 'w') as file:
             json.dump(Lista, file, indent=4)
             file.close()
 def crearmodulos():
@@ -323,15 +323,15 @@ def crearrutas():
            """)
      for i,item in enumerate(Modulos):
          n+=1
-         print(f"""
----------------------------
-{n}.{Modulos[x-1]['Nombre del modulo']}
----------------------------
-              """)
+         print(f"""---------------------------
+{n}.{Modulos[i]['Nombre del modulo']}""")
      Rutas.append(
          {
-             "Nombre de la ruta" : input("Ingrese el nombre de la ruta: ").upper().replace(" ",""),
-             "Modulos" : []
+             "Nombre de la ruta" : 
+input("""---------------------------
+Ingrese el nombre de la ruta: """).upper().replace(" ",""),
+             "Modulos" : [],
+             "Codigo" : x+1
          }
      )
      z = 0
@@ -340,7 +340,7 @@ def crearrutas():
         mod = int(input(f"Modulo n{z}: "))
         for i,item in enumerate(Modulos):
             if(mod == Modulos[i]["Codigo"]):
-                Rutas[z]["Modulos"].append(Modulos[i])
+                Rutas[x]["Modulos"].append(Modulos[i])
      
      with open('JsonRutas.json', 'w') as file:
          json.dump(Rutas, file, indent=4)
@@ -358,7 +358,7 @@ def salon():
      with open('JsonTrainers.json', 'r') as f:
           Trainers = json.loads(f.read())
           f.close()
-     
+    
      
 
 def filtros():

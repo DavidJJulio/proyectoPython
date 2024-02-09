@@ -1,5 +1,97 @@
 [
     {
+        "Nombre de la ruta": "NETCORE",
+        "Modulos": [
+            {
+                "Nombre del modulo": "FUNDAMENTOSDEPROGRAMACION",
+                "Temas del modulo": [
+                    "Pseint",
+                    "Python",
+                    "Algoritmia"
+                ],
+                "Codigo": 1
+            },
+            {
+                "Nombre del modulo": "PROGRAMACIONWEB",
+                "Temas del modulo": [
+                    "HTML",
+                    "CSS",
+                    "Bootstrap"
+                ],
+                "Codigo": 7
+            },
+            {
+                "Nombre del modulo": "BASESDEDATOS",
+                "Temas del modulo": [
+                    "Mysql"
+                ],
+                "Codigo": 2
+            },
+            {
+                "Nombre del modulo": "JAVASCRIPT",
+                "Temas del modulo": [
+                    "JavaScript"
+                ],
+                "Codigo": 5
+            },
+            {
+                "Nombre del modulo": "BASESDEDATOSALTERNATIVO",
+                "Temas del modulo": [
+                    "MongoDb",
+                    "Postgresql"
+                ],
+                "Codigo": 3
+            }
+        ],
+        "Codigo": 1
+    },
+    {
+        "Nombre de la ruta": "SPRINGBOOT",
+        "Modulos": [
+            {
+                "Nombre del modulo": "FUNDAMENTOSDEPROGRAMACION",
+                "Temas del modulo": [
+                    "Pseint",
+                    "Python",
+                    "Algoritmia"
+                ],
+                "Codigo": 1
+            },
+            {
+                "Nombre del modulo": "PROGRAMACIONWEB",
+                "Temas del modulo": [
+                    "HTML",
+                    "CSS",
+                    "Bootstrap"
+                ],
+                "Codigo": 7
+            },
+            {
+                "Nombre del modulo": "BASESDEDATOS",
+                "Temas del modulo": [
+                    "Mysql"
+                ],
+                "Codigo": 2
+            },
+            {
+                "Nombre del modulo": "JAVA",
+                "Temas del modulo": [
+                    "Java"
+                ],
+                "Codigo": 4
+            },
+            {
+                "Nombre del modulo": "BASESDEDATOSALTERNATIVO",
+                "Temas del modulo": [
+                    "MongoDb",
+                    "Postgresql"
+                ],
+                "Codigo": 3
+            }
+        ],
+        "Codigo": 2
+    },
+    {
         "Nombre de la ruta": "NODEJS",
         "Modulos": [
             {
@@ -16,14 +108,37 @@
                 "Temas del modulo": [
                     "HTML",
                     "CSS",
-                    "C#"
+                    "Bootstrap"
+                ],
+                "Codigo": 7
+            },
+            {
+                "Nombre del modulo": "BASESDEDATOS",
+                "Temas del modulo": [
+                    "Mysql"
                 ],
                 "Codigo": 2
+            },
+            {
+                "Nombre del modulo": "JAVASCRIPT",
+                "Temas del modulo": [
+                    "JavaScript"
+                ],
+                "Codigo": 5
+            },
+            {
+                "Nombre del modulo": "BASESDEDATOSALTERNATIVO",
+                "Temas del modulo": [
+                    "MongoDb",
+                    "Postgresql"
+                ],
+                "Codigo": 3
             }
-        ]
+        ],
+        "Codigo": 3
     },
     {
-        "Nombre de la ruta": "JAVA",
+        "Nombre de la ruta": "EXPRESS",
         "Modulos": [
             {
                 "Nombre del modulo": "FUNDAMENTOSDEPROGRAMACION",
@@ -39,10 +154,33 @@
                 "Temas del modulo": [
                     "HTML",
                     "CSS",
-                    "C#"
+                    "Bootstrap"
+                ],
+                "Codigo": 7
+            },
+            {
+                "Nombre del modulo": "BASESDEDATOS",
+                "Temas del modulo": [
+                    "Mysql"
                 ],
                 "Codigo": 2
+            },
+            {
+                "Nombre del modulo": "C#",
+                "Temas del modulo": [
+                    "C#"
+                ],
+                "Codigo": 6
+            },
+            {
+                "Nombre del modulo": "BASESDEDATOSALTERNATIVO",
+                "Temas del modulo": [
+                    "MongoDb",
+                    "Postgresql"
+                ],
+                "Codigo": 3
             }
-        ]
+        ],
+        "Codigo": 4
     }
 ]

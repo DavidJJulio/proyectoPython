@@ -8,5 +8,27 @@
             "3": true,
             "4": true
         }
+    },
+    {
+        "Nombre": "Apolo",
+        "Capacidad": 33,
+        "Horario": {
+            "1": true,
+            "2": true,
+            "3": true,
+            "4": true
+        }
+
+    },
+    {
+        "Nombre": "Sputnik",
+        "Capacidad": 33,
+        "Horario": {
+            "1": true,
+            "2": true,
+            "3": true,
+            "4": true
+        }
+
     }
 ]

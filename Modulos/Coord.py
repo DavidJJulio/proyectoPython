@@ -65,7 +65,7 @@ def sistemaco():
                               case 3:
                                    bandera = False
                     except:
-                         print(ValueError)
+                         print("")
                case 2: 
                     os.system('clear')
                     print(Administracion)
