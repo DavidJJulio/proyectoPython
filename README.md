@@ -1,3 +1,5 @@
+> Revisado 09/02/2024
+
 -------------------------------------------------ESTRUCTURACION DEL PROGRAMA-----------------------------------------------------------
 
 IDEA CENTRAL:
@@ -25,7 +27,7 @@ ORDEN DEL DESARROLLO:
     Coordinacion debe manejar: Modulos, Rutas, Notas de los estudiantes, Estado de los campers, Informes.
 
 2. Diseño de las rutas:
-    
+   
     En primera instancia se debe elaborar que Rutas existiran, los modulos que las conformaran, cantidad de filtros y la duracion de la ruta.
 
 3. CRUD de Trainers:
