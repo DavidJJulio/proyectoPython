@@ -25,16 +25,19 @@ def portada():
  os.system('clear')
  bandera = True
  while bandera:
+        os.system('clear')
         print(Portada)
-        opc = int(input("¿A que opcion desea ingresar?: "))
-        match(opc):
-         case 2: 
-          CRUDC.sistemac()
-         case 3:
-          CRUDT.sistemat()
-         case 1:
-          Coord.sistemaco()
-         case 4:
-          pass
-
+        try:
+                opc = int(input("¿A que opcion desea ingresar?: "))
+                match(opc):
+                        case 2:
+                                CRUDC.sistemac()
+                        case 3:
+                                CRUDT.sistemat()
+                        case 1:
+                                Coord.sistemaco()
+                        case 4:
+                                pass
+        except:
+                print(ValueError)
 

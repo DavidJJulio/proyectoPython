@@ -21,6 +21,21 @@ Rutas = ("""
 - - - - - - - - - - - - - - - - - - - - -
 - - - - - - - - - - - - - - - - - - - - -
     1. CREAR MODULO     2. CREAR RUTA
+    3. SALIR
+
+
+
+ 
+         """)
+
+Administracion = ("""
+- - - - - - - - - - - - - - - - - - - - -
+- - - - - - - - - - - - - - - - - - - - -
+- - - - - - - ADMINISTRACION - - - - - --
+- - - - - - - - - - - - - - - - - - - - -
+- - - - - - - - - - - - - - - - - - - - -
+1. GESTION SALONES             2. FILTROS
+3. SALIR
 
 
 
@@ -30,22 +45,51 @@ Rutas = ("""
 def sistemaco():
  bandera = True
  while bandera:
-        os.system('clear')
-        print(Coordinacion)
-        opc = int(input("¿A que opcion desea ingresar?: "))
-        match(opc):
-         case 1: 
-              os.system('clear')
-              print(Rutas)
-              opc1 = int(input("¿A que opcion desea ingresar?: "))
-              match(opc1):
-                   case 1:
-                        funciones.crearmodulos()
-                   case 2:
-                        funciones.crearrutas()
-         case 2: 
-              funciones.asignarsalon()
-            
+     os.system('clear')
+     print(Coordinacion)
+     try:
+          opc = int(input("¿A que opcion desea ingresar?: "))
+          match(opc):
+               case 1: 
+                    os.system('clear')
+                    print(Rutas)
+                    try:
+                         opc1 = int(input("¿A que opcion desea ingresar?: "))
+                         match(opc1):
+                              case 1:
+                                   os.system('clear')
+                                   funciones.crearmodulos()
+                              case 2:
+                                   os.system('clear')
+                                   funciones.crearrutas()
+                              case 3:
+                                   bandera = False
+                    except:
+                         print(ValueError)
+               case 2: 
+                    os.system('clear')
+                    print(Administracion)
+                    try:
+                         opc2 = int(input("A que opcion desea ingresar?: "))
+                         match(opc2):
+                              case 1:
+                                   os.system('clear')
+                                   funciones.salon()
+                              case 2:
+                                   os.system('clear')
+                                   funciones.filtros()
+                              case 3:
+                                   bandera = False
+                    except:
+                         print(ValueError)
+               case 3:
+                    os.system('clear')
+                    pass
+               case 4:
+                    bandera = False
+                    
+     except:
+          print(ValueError)
     
 
 

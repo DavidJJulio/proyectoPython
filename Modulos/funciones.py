@@ -24,7 +24,7 @@ def creartrainer():
            ],
            "Salon" : "",
            "Ruta" : "",
-           "Estado" : input("Ingrese el estado del camper\n1. pre-inscrito\n2. : ")
+           
 
         })
 
@@ -53,7 +53,11 @@ def crearcamper():
            "id" : int(input("Ingrese el numero de identidad del Camper: ")),
            "Salon" : "",
            "Trainer" : "",
-           "Horario" : "",
+           "Horario" : {
+               "1" : True,
+               "2" : True,
+               "3" : True,
+               "4" : True},
            "Ruta" : "",
            "Estado" : ""
         })
@@ -267,7 +271,7 @@ def crearrutas():
          n+=1
          print(f"""
 ---------------------------
-{n}.{Modulos[x]['Nombre del modulo']}
+{n}.{Modulos[x-1]['Nombre del modulo']}
 ---------------------------
               """)
      Rutas.append(
@@ -282,12 +286,12 @@ def crearrutas():
         mod = int(input(f"Modulo n{z}: "))
         for i,item in enumerate(Modulos):
             if(mod == Modulos[i]["Codigo"]):
-                Rutas[x]["Modulos"].append(Modulos[i])
+                Rutas[z]["Modulos"].append(Modulos[i])
      
      with open('JsonRutas.json', 'w') as file:
          json.dump(Rutas, file, indent=4)
      print(type(Rutas))
-def asignarsalon():
+def salon():
      with open('JsonSalones.json', 'r') as f:
           Salones = json.loads(f.read())
           f.close()
@@ -300,15 +304,8 @@ def asignarsalon():
      with open('JsonTrainers.json', 'r') as f:
           Trainers = json.loads(f.read())
           f.close()
-     print(Salones)
-     x = int(input(""))
-     if(x == 1):
-          Salones[0]["Horario"]["1"] = False
-     if(Salones[0]["Horario"]["1"] == False):
-          print("LETSGOOOOOO")
-          x = input("")
-     with open('JsonSalones.json', 'w') as file:
-          json.dump(Salones, file, indent=4)
+     
+     
 
 def filtros():
      pass
