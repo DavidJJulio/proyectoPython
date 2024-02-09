@@ -20,8 +20,7 @@ def sistemac():
         print(Campers)
         try:
             opc = int(input("¿A que opcion desea ingresar?: "))
-            if(4 >= opc > 0):
-               match(opc):
+            match(opc):
                   case 1: 
                      funciones.crearcamper()
                   case 2:
@@ -33,8 +32,6 @@ def sistemac():
 
         except: 
          print("Ingrese un numero no un caracter.")
-         x = input("Enter para continuar...")
-
 
 
         

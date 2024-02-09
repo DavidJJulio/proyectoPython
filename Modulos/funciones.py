@@ -18,14 +18,14 @@ def creartrainer():
               for x in range(int(input("¿Cuantos numeros de contacto tiene?: ")))
            ],
            "id" : int((input("Ingrese el numero de identidad del Trainer: "))),
-           "Horario" : [    
-                            input("\n\n\n\n  ---- HORARIOS LABORALES ----\n1. ---- 6:00 AM - 10:00 AM ----\n2. ---- 10:00 AM - 2:00 PM ----\n3. ---- 2:00 PM - 6:00 PM  ----\n4. ---- 6:00 PM - 10:00 PM ----\n\n  Seleccione un horario: ") 
-                            for i in range(int(input("Cuantas jornadas trabajará el trainer? (1 Jornada = 4 horas): ")))
-           ],
+           "Horario" : {
+               "1" : True,
+               "2" : True,
+               "3" : True,
+               "4" : True
+           },
            "Salon" : "",
-           "Ruta" : "",
-           
-
+           "Ruta" : ""
         })
 
 
@@ -59,7 +59,13 @@ def crearcamper():
                "3" : True,
                "4" : True},
            "Ruta" : "",
-           "Estado" : ""
+           "Estado" : {
+               "1" : False,
+               "2" : False,
+               "3" : False,
+               "4" : False,
+               "5" : False
+           }
         })
         x = len(Lista)
         if Lista[x-1]["Edad"] < 18:
@@ -77,14 +83,28 @@ def eliminartrainer():
         Lista = json.loads(f.read())
         os.system('clear')
         f.close()
+        for i, item in enumerate(Lista):
+            print(f"""
+    ------------------
+    {Lista[i]['Nombre']}, {Lista[i]['Apellido']}
+    Edad {Lista[i]['Edad']}, {Lista[i]['id']}
+    ------------------
+    """)
         identificacion = int(input("Ingrese el id del trainer que desea eliminar: "))
         for i, item in enumerate(Lista):
             if(Lista[i]["id"] == identificacion):
-                print(Lista[i])
+                print(f"""
+------------------
+{Lista[i]['Nombre']}, {Lista[i]['Apellido']}
+Edad {Lista[i]['Edad']}, {Lista[i]['id']}
+------------------
+""")
                 try:
                     x = int(input("Desea eliminar este trainer?  1.Si  2.No: "))
                     if(x == 1):
                         del Lista[i]
+                        print("Se ha eliminado correctamente")
+                        x = input("Ingrese enter para continuar")
                     elif(x == 2):
                         bandera = False
 
@@ -93,7 +113,7 @@ def eliminartrainer():
                     n = input("")
         
             else:
-                    print("ok")
+                    print("No existe este trainer")
                     n = input("")
                     bandera = False
     with open('JsonTrainers.json', 'w') as file:
@@ -105,6 +125,13 @@ def eliminarcamper():
         Lista = json.loads(f.read())
         os.system('clear')
         f.close()
+        for i, item in enumerate(Lista):
+            print(f"""
+------------------
+{Lista[i]['Nombre']}, {Lista[i]['Apellido']}
+Edad {Lista[i]['Edad']}, {Lista[i]['id']}
+------------------
+""")
         identificacion = int(input("Ingrese el id del camper que desea eliminar: "))
         for i, item in enumerate(Lista):
             if(Lista[i]["id"] == identificacion):
@@ -138,6 +165,13 @@ def actualizartrainer():
         Lista = json.loads(f.read())
         os.system('clear')
         f.close()
+        for i, item in enumerate(Lista):
+            print(f"""
+    ------------------
+    {Lista[i]['Nombre']}, {Lista[i]['Apellido']}
+    Edad {Lista[i]['Edad']}, {Lista[i]['id']}
+    ------------------
+    """)
         identificacion = int(input("Ingrese el id del trainer que desea actualizar: "))
         for i, item in enumerate(Lista):
             if(Lista[i]["id"] == identificacion):
@@ -163,12 +197,15 @@ Edad {Lista[i]['Edad']}, {Lista[i]['id']}
               }
               for x in range(int(input("¿Cuantos numeros de contacto tiene?: ")))
            ],
-           "Estado" : "",
            "id" : int((input("Ingrese el numero de identidad del Trainer: "))),
-           "Horario" : [    
-                            input("\n\n\n\n  ---- HORARIOS LABORALES ----\n1. ---- 6:00 AM - 10:00 AM ----\n2. ---- 10:00 AM - 2:00 PM ----\n3. ---- 2:00 PM - 6:00 PM  ----\n4. ---- 6:00 PM - 10:00 PM ----\n\n  Seleccione un horario: ") 
-                            for i in range(int(input("Cuantas jornadas trabajará el trainer? (1 Jornada = 4 horas): ")))
-           ]
+           "Horario" : {
+               "1" : True,
+               "2" : True,
+               "3" : True,
+               "4" : True
+           },
+           "Salon" : "",
+           "Ruta" : ""
         })
                     elif(x == 2):
                         bandera = False
@@ -190,8 +227,15 @@ def actualizarcamper():
         Lista = json.loads(f.read())
         os.system('clear')
         f.close()
-        identificacion = int(input("Ingrese el id del camper que desea actualizar: "))
-        for i, item in enumerate(Lista):
+    for i, item in enumerate(Lista):
+            print(f"""
+------------------
+{Lista[i]['Nombre']}, {Lista[i]['Apellido']}
+Edad {Lista[i]['Edad']}, {Lista[i]['id']}
+------------------
+""")
+    identificacion = int(input("Ingrese el id del camper que desea actualizar: "))
+    for i, item in enumerate(Lista):
             if(Lista[i]["id"] == identificacion):
                 print(f"""
 ------------------
@@ -216,13 +260,23 @@ Edad {Lista[i]['Edad']}, {Lista[i]['id']}
               for x in range((int(input("¿Cuantos numeros de contacto tiene?: "))))
            ],
            "Estado" : "",
-           "id" : int(input("Ingrese el numero de identidad del Camper: "))
+           "id" : int(input("Ingrese el numero de identidad del Camper: ")),
+           "Salon" : "",
+           "Trainer" : "",
+           "Horario" : {
+               "1" : True,
+               "2" : True,
+               "3" : True,
+               "4" : True},
+           "Ruta" : "",
+           "Estado" : {
+               "1" : False,
+               "2" : False,
+               "3" : False,
+               "4" : False,
+               "5" : False
+           }
         })
-                        if Lista[x-1]["Edad"] < 18:
-                            Lista[x].update({
-                            "Acudiente" : input("Ingrese el nombre de su acudiente: "),
-                            "CelAcudiente" : input("Ingrese el numero telefonico de el acudiente: ")
-                            })
                     elif(x == 2):
                         bandera = False
 

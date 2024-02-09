@@ -34,6 +34,5 @@ def sistemat():
 
         except: 
          print("Ingrese un numero no un caracter.")
-         x = input("Enter para continuar...")
             
     
