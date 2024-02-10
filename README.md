@@ -46,3 +46,9 @@ Archivo Json para Rutas
 Archivo Json para Trainers
 Archivo Json para notas y filtros
 Archivo Json para Horarios, Salones y grupos
+
+
+REQUERIMIENTOS EN BASE AL NOTION:
+1. APROBADO
+2. APROBADO
+3. 

@@ -74,7 +74,7 @@ def sistemaco():
                          match(opc2):
                               case 1:
                                    os.system('clear')
-                                   funciones.salon()
+                                   funciones.saloncamper()
                               case 2:
                                    os.system('clear')
                                    funciones.filtros()

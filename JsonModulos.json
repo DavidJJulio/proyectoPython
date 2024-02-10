@@ -9,11 +9,20 @@
         "Codigo": 1
     },
     {
+        "Nombre del modulo": "PROGRAMACIONWEB",
+        "Temas del modulo": [
+            "HTML",
+            "CSS",
+            "Bootstrap"
+        ],
+        "Codigo": 2
+    },
+    {
         "Nombre del modulo": "BASESDEDATOS",
         "Temas del modulo": [
             "Mysql"
         ],
-        "Codigo": 2
+        "Codigo": 3
     },
     {
         "Nombre del modulo": "BASESDEDATOSALTERNATIVO",
@@ -21,36 +30,55 @@
             "MongoDb",
             "Postgresql"
         ],
-        "Codigo": 3
+        "Codigo": 4
     },
     {
         "Nombre del modulo": "JAVA",
         "Temas del modulo": [
             "Java"
         ],
-        "Codigo": 4
+        "Codigo": 5
     },
     {
         "Nombre del modulo": "JAVASCRIPT",
         "Temas del modulo": [
             "JavaScript"
         ],
-        "Codigo": 5
+        "Codigo": 6
     },
     {
         "Nombre del modulo": "C#",
         "Temas del modulo": [
             "C#"
         ],
-        "Codigo": 6
+        "Codigo": 7
     },
     {
-        "Nombre del modulo": "PROGRAMACIONWEB",
+        "Nombre del modulo": "BACKENDNETCORE",
         "Temas del modulo": [
-            "HTML",
-            "CSS",
-            "Bootstrap"
+            "NetCore"
         ],
-        "Codigo": 7
+        "Codigo": 8
+    },
+    {
+        "Nombre del modulo": "BACKENDSPRINGBOOT",
+        "Temas del modulo": [
+            "Spring Boot"
+        ],
+        "Codigo": 9
+    },
+    {
+        "Nombre del modulo": "BACKENDNODEJS",
+        "Temas del modulo": [
+            "NodeJS"
+        ],
+        "Codigo": 10
+    },
+    {
+        "Nombre del modulo": "BACKENDEXPRESS",
+        "Temas del modulo": [
+            "Express"
+        ],
+        "Codigo": 11
     }
 ]

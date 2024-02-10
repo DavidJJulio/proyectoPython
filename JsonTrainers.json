@@ -1,2 +1,50 @@
 [
+    {
+        "Nombre": "Miguel",
+        "Apellido": "Castro",
+        "Edad": 29,
+        "Genero": "Masculino",
+        "Numero": [],
+        "id": 1070843572,
+        "Horario": {
+            "1": false,
+            "2": false,
+            "3": false,
+            "4": false
+        },
+        "Salon": [],
+        "Ruta": []
+    },
+    {
+        "Nombre": "Johver",
+        "Apellido": "Pardo",
+        "Edad": 55,
+        "Genero": "Masculino",
+        "Numero": [],
+        "id": 1080843572,
+        "Horario": {
+            "1": false,
+            "2": false,
+            "3": false,
+            "4": false
+        },
+        "Salon": [],
+        "Ruta": []
+    },
+    {
+        "Nombre": "Yesli",
+        "Apellido": "Vannesa",
+        "Edad": 35,
+        "Genero": "Femenino",
+        "Numero": [],
+        "id": 1090843572,
+        "Horario": {
+            "1": false,
+            "2": false,
+            "3": false,
+            "4": false
+        },
+        "Salon": [],
+        "Ruta": []
+    }
 ]
