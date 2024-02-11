@@ -440,6 +440,48 @@ def saloncamper():
     with open('JsonTrainers.json', 'r') as f:
           Trainers = json.loads(f.read())
           f.close()
+          
+          
+    print("""
+---------------------------------------
+-------Ingresar Camper al Salon-------
+---------------------------------------
+
+1. 6 AM - 10 PM
+2. 10 AM - 2 PM
+3. 2 PM - 6 PM
+4. 6 PM - 10 PM
+
+""")
+    try:
+        opc = int(input("Que horario desea?"))
+        match(opc):
+            case 1:
+                os.system('clear')
+                try:
+                    print("""
+        ----------------------------
+            SALONES DISPONIBLES
+        ----------------------------
+        """)
+                    for i,item in enumerate(Salones):
+                        if Salones[i]["Trainer1"] == False:
+                            n+=1
+                            print(f"""---------------------
+{n}.{Salones[i]["Nombre"]}
+---------------------""")
+                except:
+                    pass
+            case 2:
+                os.system('clear')
+            case 3:
+                os.system('clear')
+            case 4:
+                os.system('clear')
+    except:
+        print("Esa no es una opcion valida")                
+                
+                
     with open('JsonSalones.json', 'w') as f:
           json.dump(Salones, f, indent=4)
           f.close()
