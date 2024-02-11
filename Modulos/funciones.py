@@ -26,7 +26,7 @@ def creartrainer():
                "3" : True,
                "4" : True
            },
-           "Salon" : 0,
+           "Salon" : [],
            "Ruta" : []
         })
     print(""")
@@ -195,16 +195,18 @@ def actualizartrainer():
     with open('JsonTrainers.json', 'r') as f:
         Lista = json.loads(f.read())
         os.system('clear')
+    with open('JsonRutas.json', 'r') as f:
+        Rutas = json.loads(f.read())
         f.close()
-        for i, item in enumerate(Lista):
+    for i, item in enumerate(Lista):
             print(f"""
     ------------------
     {Lista[i]['Nombre']}, {Lista[i]['Apellido']}
     Edad {Lista[i]['Edad']}, {Lista[i]['id']}
     ------------------
     """)
-        identificacion = int(input("Ingrese el id del trainer que desea actualizar: "))
-        for i, item in enumerate(Lista):
+            identificacion = int(input("Ingrese el id del trainer que desea actualizar: "))
+    for i, item in enumerate(Lista):
             if(Lista[i]["id"] == identificacion):
                 print(f"""
 ---------------------
@@ -235,9 +237,26 @@ Edad {Lista[i]['Edad']}, id {Lista[i]['id']}
                "3" : True,
                "4" : True
            },
-           "Salon" : 0,
-           "Ruta" : 0
+           "Salon" : [],
+           "Ruta" : []
         })
+                        print(""")
+                    -------------------------
+                    ----RUTAS DISPONIBLES----
+                    -------------------------
+                            """)
+                        n=0
+                        for i,item in enumerate(Rutas):
+                            n+=1
+                            print(f"""---------------------------
+                    {n}.{Rutas[i]['Nombre de la ruta']}""") 
+                        z = int(input("Ingrese el codigo de la ruta: "))
+                        for i, item in enumerate (Rutas):
+                            if Rutas[i]["Codigo"] == z:
+                                Lista[x-1]["Ruta"].append(z)
+                            else:
+                                print("Esta ruta no existe")
+            
                     elif(x == 2):
                         bandera = False
 
@@ -520,17 +539,15 @@ Edad {Trainers[i]['Edad']}, id {Trainers[i]['id']}
                                     Salones[i]["idT1"].append(Trainers[y]["id"])
                                     Salones[i]["Horario"]["1"] = False
                                     Trainers[y]["Horario"]["1"] = False
-                                    Trainers[y]["Salon"] += opc2
+                                    Trainers[y]["Salon"].append(opc2)
                                     Salones[i]["R1"].append(int(input("Ingrese la ruta que impartira el trainer\n1. JAVA\n2. NetCore\n3. NodeJS")))
                                                 
                             
                         except:
                             print("")
-                    else:
-                        print("Este trainer no existe")
-                        x = input("")
 
             case 2:
+                os.system('clear')
                 print("""
 ----------------------------
     TRAINERS DISPONIBLES
@@ -541,10 +558,43 @@ Edad {Trainers[i]['Edad']}, id {Trainers[i]['id']}
                             print(f"""---------------------
 {Trainers[i]['Nombre']}, {Trainers[i]['Apellido']}
 Edad {Trainers[i]['Edad']}, id {Trainers[i]['id']}
----------------------""")   
+---------------------""")
+                opc1 = int(input("Ingrese el id del trainer que desea: "))
+                for y, item in enumerate(Trainers):
+                    if Trainers[y]["id"] == opc1:
+                        
+                        try:
+                            print("""
+        ----------------------------
+            SALONES DISPONIBLES
+        ----------------------------
+        """)
+                            for i,item in enumerate(Salones):
+                                if Salones[i]["Trainer2"] == False:
+                                    n+=1
+                                    print(f"""---------------------
+{n}.{Salones[i]["Nombre"]}
+---------------------""")
+                            opc2 = int(input("Ingrese a que salon quiere ingresar este trainer: "))
+                            for i,item in enumerate(Salones):
+                                if Salones[i]["Codigo"] == opc2:
+                                    os.system('clear')
+                                    Salones[i]["Trainer2"] = True
+                                    Salones[i]["idT2"].append(Trainers[y]["id"])
+                                    Salones[i]["Horario"]["2"] = False
+                                    Trainers[y]["Horario"]["2"] = False
+                                    Trainers[y]["Salon"].append(opc2)
+                                    Salones[i]["R2"].append(int(input("Ingrese la ruta que impartira el trainer\n1. JAVA\n2. NetCore\n3. NodeJS")))
+                                                
                             
-                            
+                        except:
+                            print("")
+                    else:
+                        print("Este trainer no existe")
+                        x = input("")
+
             case 3:
+                os.system('clear')
                 print("""
 ----------------------------
     TRAINERS DISPONIBLES
@@ -555,10 +605,42 @@ Edad {Trainers[i]['Edad']}, id {Trainers[i]['id']}
                             print(f"""---------------------
 {Trainers[i]['Nombre']}, {Trainers[i]['Apellido']}
 Edad {Trainers[i]['Edad']}, id {Trainers[i]['id']}
----------------------""")   
+---------------------""")
+                opc1 = int(input("Ingrese el id del trainer que desea: "))
+                for y, item in enumerate(Trainers):
+                    if Trainers[y]["id"] == opc1:
+                        
+                        try:
+                            print("""
+        ----------------------------
+            SALONES DISPONIBLES
+        ----------------------------
+        """)
+                            for i,item in enumerate(Salones):
+                                if Salones[i]["Trainer3"] == False:
+                                    n+=1
+                                    print(f"""---------------------
+{n}.{Salones[i]["Nombre"]}
+---------------------""")
+                            opc2 = int(input("Ingrese a que salon quiere ingresar este trainer: "))
+                            for i,item in enumerate(Salones):
+                                if Salones[i]["Codigo"] == opc2:
+                                    os.system('clear')
+                                    Salones[i]["Trainer3"] = True
+                                    Salones[i]["idT3"].append(Trainers[y]["id"])
+                                    Salones[i]["Horario"]["3"] = False
+                                    Trainers[y]["Horario"]["3"] = False
+                                    Trainers[y]["Salon"].append(opc2)
+                                    Salones[i]["R3"].append(int(input("Ingrese la ruta que impartira el trainer\n1. JAVA\n2. NetCore\n3. NodeJS")))
+                                                
                             
-                            
-            case 4:
+                        except:
+                            print("")
+                    else:
+                        print("Este trainer no existe")
+                        x = input("")
+            case 4:     
+                os.system('clear')
                 print("""
 ----------------------------
     TRAINERS DISPONIBLES
@@ -569,109 +651,45 @@ Edad {Trainers[i]['Edad']}, id {Trainers[i]['id']}
                             print(f"""---------------------
 {Trainers[i]['Nombre']}, {Trainers[i]['Apellido']}
 Edad {Trainers[i]['Edad']}, id {Trainers[i]['id']}
----------------------""")   
+---------------------""")
+                opc1 = int(input("Ingrese el id del trainer que desea: "))
+                for y, item in enumerate(Trainers):
+                    if Trainers[y]["id"] == opc1:
+                        
+                        try:
+                            print("""
+        ----------------------------
+            SALONES DISPONIBLES
+        ----------------------------
+        """)
+                            for i,item in enumerate(Salones):
+                                if Salones[i]["Trainer4"] == False:
+                                    n+=1
+                                    print(f"""---------------------
+{n}.{Salones[i]["Nombre"]}
+---------------------""")
+                            opc2 = int(input("Ingrese a que salon quiere ingresar este trainer: "))
+                            for i,item in enumerate(Salones):
+                                if Salones[i]["Codigo"] == opc2:
+                                    os.system('clear')
+                                    Salones[i]["Trainer4"] = True
+                                    Salones[i]["idT4"].append(Trainers[y]["id"])
+                                    Salones[i]["Horario"]["4"] = False
+                                    Trainers[y]["Horario"]["4"] = False
+                                    Trainers[y]["Salon"].append(opc2)
+                                    Salones[i]["R4"].append(int(input("Ingrese la ruta que impartira el trainer\n1. JAVA\n2. NetCore\n3. NodeJS")))
+                                                
+                            
+                        except:
+                            print("")
+                    else:
+                        print("Este trainer no existe")
+                        x = input("")
     except:
-        print("")
-
+        print("Numero invalido")
     with open('JsonTrainers.json', 'w') as f:
         json.dump(Trainers, f, indent = 4)
         f.close()
     with open('JsonSalones.json', 'w') as f:
         json.dump(Salones, f, indent = 4)
         f.close()
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-#     for i,item in enumerate(Salones):
-#         if Salones[i]["Trainer1"] == False:
-#             print(f"""---------------------
-# {Salones[i]["Nombre"]}
-# ---------------------""")
-#         elif(Salones[i])["Trainer2"] == False:
-#             print(f"""---------------------
-# {Salones[i]["Nombre"]}
-# ---------------------""")
-#         elif(Salones[i])["Trainer3"] == False:
-#             print(f"""---------------------
-# {Salones[i]["Nombre"]}
-# ---------------------""")
-#         elif(Salones[i])["Trainer4"] == False:
-#             print(f"""---------------------
-# {Salones[i]["Nombre"]}
-# ---------------------""")
-        
-        
-        
-        
-        
-        
-        
-     
-        
-        
-        
-#     for i, item in enumerate(Trainers):
-#         if Trainers[i]["Horario"]["1"] == True:
-#                 print(f"""
-# ---------------------
-# TRAINERS DISPONIBLES 
-#     6 AM - 10 AM
-# {Trainers[i]['Nombre']}, {Trainers[i]['Apellido']}
-# Edad {Trainers[i]['Edad']}, id {Trainers[i]['id']}
-# ---------------------
-# """)    
-#         elif(Trainers[i]["Horario"]["2"] == True):
-#             print(f"""
-# ---------------------
-# TRAINERS DISPONIBLES 
-#     10 AM - 2 PM
-# {Trainers[i]['Nombre']}, {Trainers[i]['Apellido']}
-# Edad {Trainers[i]['Edad']}, id {Trainers[i]['id']}
-# ---------------------
-# """)
-#         elif(Trainers[i]["Horario"]["3"] == True):
-#             print(f"""
-# ---------------------
-# TRAINERS DISPONIBLES 
-#     2 PM - 6 PM
-# {Trainers[i]['Nombre']}, {Trainers[i]['Apellido']}
-# Edad {Trainers[i]['Edad']}, id {Trainers[i]['id']}
-# ---------------------
-# """)
-#         elif(Trainers[i]["Horario"]["4"] == True):
-#             print(f"""
-# ---------------------
-# TRAINERS DISPONIBLES 
-#     6 PM - 10 PM
-# {Trainers[i]['Nombre']}, {Trainers[i]['Apellido']}
-# Edad {Trainers[i]['Edad']}, id {Trainers[i]['id']}
-# ---------------------
-# """)
