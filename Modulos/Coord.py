@@ -35,7 +35,8 @@ Administracion = ("""
 - - - - - - - - - - - - - - - - - - - - -
 - - - - - - - - - - - - - - - - - - - - -
 1. GESTION SALONES             2. FILTROS
-3. SALIR
+3. PRUEBAS ADMISION            4. SALIR
+5. FILTRO
 
 
 
@@ -79,7 +80,7 @@ def sistemaco():
                                    os.system('clear')
                                    funciones.filtros()
                               case 3:
-                                   bandera = False
+                                   funciones.prueba_admision()
                     except:
                          print(ValueError)
                case 3:

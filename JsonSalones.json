@@ -3,20 +3,20 @@
         "Nombre": "Artemis",
         "Capacidad": 33,
         "Horario": {
-            "1": false,
-            "2": false,
-            "3": false,
-            "4": false
+            "1": true,
+            "2": true,
+            "3": true,
+            "4": true
         },
         "Estudiantes": [],
         "Trainer1": false,
         "Trainer2": false,
         "Trainer3": false,
         "Trainer4": false,
-        "NombT1": "",
-        "NombT2": "",
-        "NombT3": "",
-        "NombT4": "",
+        "idT1": [],
+        "idT2": [],
+        "idT3": [],
+        "idT4": [],
         "Codigo": 1
     },
     {
@@ -24,39 +24,39 @@
         "Capacidad": 33,
         "Horario": {
             "1": true,
-            "2": false,
-            "3": false,
-            "4": false
+            "2": true,
+            "3": true,
+            "4": true
         },
         "Estudiantes": [],
         "Trainer1": false,
         "Trainer2": false,
         "Trainer3": false,
         "Trainer4": false,
-        "NombT1": "",
-        "NombT2": "",
-        "NombT3": "",
-        "NombT4": "",
+        "idT1": [],
+        "idT2": [],
+        "idT3": [],
+        "idT4": [],
         "Codigo": 2
     },
     {
         "Nombre": "Sputnik",
         "Capacidad": 33,
         "Horario": {
-            "1": false,
-            "2": false,
-            "3": false,
-            "4": false
+            "1": true,
+            "2": true,
+            "3": true,
+            "4": true
         },
         "Estudiantes": [],
         "Trainer1": false,
         "Trainer2": false,
         "Trainer3": false,
         "Trainer4": false,
-        "NombT1": "",
-        "NombT2": "",
-        "NombT3": "",
-        "NombT4": "",
+        "idT1": [],
+        "idT2": [],
+        "idT3": [],
+        "idT4": [],
         "Codigo": 3
     }
 ]

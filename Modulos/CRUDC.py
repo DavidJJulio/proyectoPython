@@ -28,7 +28,7 @@ def sistemac():
                   case 3:
                      funciones.actualizarcamper()
                   case 4:
-                     bandera = False
+                     funciones.salontrainer()
 
         except: 
          print("Ingrese un numero no un caracter.")

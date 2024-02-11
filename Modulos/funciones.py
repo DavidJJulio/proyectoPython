@@ -1,6 +1,8 @@
 import json
 import os
 def creartrainer():
+    with open('JsonRutas.json', 'r') as f:
+        Rutas = json.loads(f.read())
     with open('JsonTrainers.json', 'r') as f:
         Lista = json.loads(f.read())
         x = len(Lista)
@@ -19,73 +21,89 @@ def creartrainer():
            ],
            "id" : int((input("Ingrese el numero de identidad del Trainer: "))),
            "Horario" : {
-               "1" : False,
-               "2" : False,
-               "3" : False,
-               "4" : False
+               "1" : True,
+               "2" : True,
+               "3" : True,
+               "4" : True
            },
            "Salon" : 0,
-           "Ruta" : 0
+           "Ruta" : []
         })
-
-
+    print(""")
+-------------------------
+----RUTAS DISPONIBLES----
+-------------------------
+           """)
+    n=0
+    for i,item in enumerate(Rutas):
+         n+=1
+         print(f"""---------------------------
+{n}.{Rutas[i]['Nombre de la ruta']}""") 
+    z = int(input("Ingrese el codigo de la ruta: "))
+    for i, item in enumerate (Rutas):
+        if Rutas[i]["Codigo"] == z:
+            Lista[x-1]["Ruta"].append(z)
+        else:
+            print("Esta ruta no existe")
     with open('JsonTrainers.json', 'w') as file:
         json.dump(Lista, file, indent = 4)
         file.close()
 def crearcamper():
     with open('JsonCampers.json', 'r') as f:
         Lista = json.loads(f.read())
+        f.close()
         x = len(Lista)
-        os.system('clear')
-        Lista.append({
-           "Nombre" : input("Ingrese el nombre del Camper: "),
-           "Apellido" : input("Ingrese el apellido del Camper: "),
-           "Edad" : int(input("Ingrese la edad del Camper: ")),
-           "Genero" : input("Ingrese el genero del Camper: "),
-           "Numero" : [
-              {
-                 f"{'fijo' if(int(input('1.Fijo  0.Celular: ')))else 'Celular'}":
-                    input(f'Numero de contacto {x+1}: ')
-              }
-              for x in range((int(input("¿Cuantos numeros de contacto tiene?: "))))
-           ],
-           "id" : int(input("Ingrese el numero de identidad del Camper: ")),
-           "Salon" : [],
-           "Trainer" : [],
-           "Horario" : {
-               "1" : False,},
-           "Ruta" : 0,
-           "Estado" : {
-               1 : False,
-               2 : False,
-               3 : False,
-               4 : False,
-               5 : False,
-               6 : False
-           },
-           "Riesgo" : 0
-        })
-        x = len(Lista)
-        if Lista[x-1]["Edad"] < 18:
-           Lista[x-1].update({
-              "Acudiente" : input("Ingrese el nombre de su acudiente: "),
-              "CelAcudiente" : input("Ingrese el numero telefonico de el acudiente: ")
-              })
-        n = int(input
+    os.system('clear')
+    Lista.append({
+        "Nombre" : input("Ingrese el nombre del Camper: "),
+        "Apellido" : input("Ingrese el apellido del Camper: "),
+        "Edad" : int(input("Ingrese la edad del Camper: ")),
+        "Genero" : input("Ingrese el genero del Camper: "),
+        "Numero" : [
+            {
+                f"{'fijo' if(int(input('1.Fijo  0.Celular: ')))else 'Celular'}":
+                input(f'Numero de contacto {x+1}: ')
+            }
+            for x in range((int(input("¿Cuantos numeros de contacto tiene?: "))))
+        ],
+        "id" : int(input("Ingrese el numero de identidad del Camper: ")),
+        "Salon" : [],
+        "Trainer" : [],
+        "Horario" : {
+            "1" : False,},
+        "Ruta" : 0,
+        "Estado" : {
+            1 : False,
+            2 : False,
+            3 : False,
+            4 : False,
+            5 : False,
+            6 : False,
+            7 : False
+        },
+        "Riesgo" : 0
+    })
+    x = len(Lista)
+    if Lista[x-1]["Edad"] < 18:
+        Lista[x-1].update({
+            "Acudiente" : input("Ingrese el nombre de su acudiente: "),
+            "CelAcudiente" : input("Ingrese el numero telefonico de el acudiente: ")
+            })
+    n = int(input
 ("""
- -------------
- 1. Inscrito
- 2. Aprobado
- 3. Cursando
- 4. Graduado
- 5. Expulsado
- 6. Retirado
- -------------
- Ingrese el estado del camper: 
- """))
-        for i in Lista[x-1]["Estado"]:
-            if n == i:
-                Lista[x-1]["Estado"][i] = True
+-------------
+1. Inscrito
+2. Aprobado
+3. Cursando
+4. Graduado
+5. Expulsado
+6. Retirado
+-------------
+Ingrese el estado del camper: 
+"""))
+    for i in Lista[x-1]["Estado"]:
+        if n == i:
+            Lista[x-1]["Estado"][i] = True
         
     with open('JsonCampers.json', 'w') as file:
         json.dump(Lista, file, indent = 4)
@@ -133,21 +151,21 @@ Edad {Lista[i]['Edad']}, id {Lista[i]['id']}
             json.dump(Lista, file, indent=4)
             file.close()
 def eliminarcamper():
-    bandera = True
+    os.system('clear')
     with open('JsonCampers.json', 'r') as f:
         Lista = json.loads(f.read())
-        os.system('clear')
         f.close()
-        for i, item in enumerate(Lista):
-            print(f"""
+
+    for i, item in enumerate(Lista):
+        print(f"""
 ------------------
 {Lista[i]['Nombre']}, {Lista[i]['Apellido']}
 Edad {Lista[i]['Edad']}, {Lista[i]['id']}
 ------------------
 """)
-        identificacion = int(input("Ingrese el id del camper que desea eliminar: "))
-        for i, item in enumerate(Lista):
-            if(Lista[i]["id"] == identificacion):
+    identificacion = int(input("Ingrese el id del camper que desea eliminar: "))
+    for i, item in enumerate(Lista):
+        if(Lista[i]["id"] == identificacion):
                 print(f"""
 ---------------------
 {Lista[i]['Nombre']}, {Lista[i]['Apellido']}
@@ -165,8 +183,8 @@ Edad {Lista[i]['Edad']}, id {Lista[i]['id']}
                     print("No ingresó un numero valido.")
                     n = input("")
         
-            else:
-                    print("ok")
+        else:
+                    print("Este camper no existe")
                     n = input("")
                     bandera = False
     with open('JsonCampers.json', 'w') as file:
@@ -412,7 +430,248 @@ def saloncamper():
     with open('JsonTrainers.json', 'w') as fire:
           json.dump(Trainers, fire, indent=4)
           fire.close()
+def prueba_admision():
+    os.system('clear')
+    with open('JsonCampers.json', 'r') as f:
+        Campers = json.loads(f.read())
+        f.close()
+    for i, item in enumerate(Campers):
+        if Campers[i]["Estado"]["1"] == True:
+            print(f"""
+---------------------
+{Campers[i]['Nombre']}, {Campers[i]['Apellido']}
+Edad {Campers[i]['Edad']}, id {Campers[i]['id']}
+---------------------
+""")
+    p = int(input("A cual camper desea ingresarle notas del examen de admision?"))
+    for i,item in enumerate(Campers):
+        if (Campers[i]["id"] == p):
+            if Campers[i]["Estado"]["1"] == True:
+                o = int(input("Cual fue su puntaje en el examen"))
+                if(o >= 60):
+                    Campers[i]["Estado"]["2"] = True
+                    Campers[i]["Estado"]["1"] = False
+                else:
+                    print("Este camper no ha aprobado la prueba de admisión")
+                    Campers[i]["Estado"]["1"] = False
+                    Campers[i]["Estado"]["7"] = True
+            else:
+                print("Este camper se encuentra en un estado diferente a pre-inscrito")
+    with open('JsonCampers.json', 'w') as f:
+        json.dump(Campers, f, indent = 4)
+        f.close()
+def salontrainer():
+    os.system('clear')
+    with open('JsonTrainers.json', 'r') as f:
+        Trainers = json.loads(f.read())
+        f.close()
+    with open('JsonSalones.json', 'r') as f:
+        Salones = json.loads(f.read())
+        f.close()
+        n = 0
+    print("""
+---------------------------------------
+-------Ingresar Trainer al Salon-------
+---------------------------------------
 
+1. 6 AM - 10 PM
+2. 10 AM - 2 PM
+3. 2 PM - 6 PM
+4. 6 PM - 10 PM
 
+""")
+    try:
+        opc = int(input("Que horario desea?"))
+        match(opc):
+            case 1:
+                os.system('clear')
+                print("""
+----------------------------
+    TRAINERS DISPONIBLES
+----------------------------
+""")
+                for i, item in enumerate(Trainers):
+                    if Trainers[i]["Horario"]["1"] == True:
+                            print(f"""---------------------
+{Trainers[i]['Nombre']}, {Trainers[i]['Apellido']}
+Edad {Trainers[i]['Edad']}, id {Trainers[i]['id']}
+---------------------""")
+                opc1 = int(input("Ingrese el id del trainer que desea: "))
+                for y, item in enumerate(Trainers):
+                    if Trainers[y]["id"] == opc1:
+                        
+                        try:
+                            print("""
+        ----------------------------
+            SALONES DISPONIBLES
+        ----------------------------
+        """)
+                            for i,item in enumerate(Salones):
+                                if Salones[i]["Trainer1"] == False:
+                                    n+=1
+                                    print(f"""---------------------
+{n}.{Salones[i]["Nombre"]}
+---------------------""")
+                            opc2 = int(input("Ingrese a que salon quiere ingresar este trainer: "))
+                            for i,item in enumerate(Salones):
+                                if Salones[i]["Codigo"] == opc2:
+                                    os.system('clear')
+                                    Salones[i]["Trainer1"] = True
+                                    Salones[i]["idT1"].append(Trainers[y]["id"])
+                                    Salones[i]["Horario"]["1"] = False
+                                    Trainers[y]["Horario"]["1"] = False
+                                    Trainers[y]["Salon"] += opc2
+                                    Salones[i]["R1"].append(int(input("Ingrese la ruta que impartira el trainer\n1. JAVA\n2. NetCore\n3. NodeJS")))
+                                                
+                            
+                        except:
+                            print("")
+                    else:
+                        print("Este trainer no existe")
+                        x = input("")
 
+            case 2:
+                print("""
+----------------------------
+    TRAINERS DISPONIBLES
+----------------------------
+""")
+                for i, item in enumerate(Trainers):
+                    if Trainers[i]["Horario"]["2"] == True:
+                            print(f"""---------------------
+{Trainers[i]['Nombre']}, {Trainers[i]['Apellido']}
+Edad {Trainers[i]['Edad']}, id {Trainers[i]['id']}
+---------------------""")   
+                            
+                            
+            case 3:
+                print("""
+----------------------------
+    TRAINERS DISPONIBLES
+----------------------------
+""")
+                for i, item in enumerate(Trainers):
+                    if Trainers[i]["Horario"]["3"] == True:
+                            print(f"""---------------------
+{Trainers[i]['Nombre']}, {Trainers[i]['Apellido']}
+Edad {Trainers[i]['Edad']}, id {Trainers[i]['id']}
+---------------------""")   
+                            
+                            
+            case 4:
+                print("""
+----------------------------
+    TRAINERS DISPONIBLES
+----------------------------
+""")
+                for i, item in enumerate(Trainers):
+                    if Trainers[i]["Horario"]["4"] == True:
+                            print(f"""---------------------
+{Trainers[i]['Nombre']}, {Trainers[i]['Apellido']}
+Edad {Trainers[i]['Edad']}, id {Trainers[i]['id']}
+---------------------""")   
+    except:
+        print("")
 
+    with open('JsonTrainers.json', 'w') as f:
+        json.dump(Trainers, f, indent = 4)
+        f.close()
+    with open('JsonSalones.json', 'w') as f:
+        json.dump(Salones, f, indent = 4)
+        f.close()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+#     for i,item in enumerate(Salones):
+#         if Salones[i]["Trainer1"] == False:
+#             print(f"""---------------------
+# {Salones[i]["Nombre"]}
+# ---------------------""")
+#         elif(Salones[i])["Trainer2"] == False:
+#             print(f"""---------------------
+# {Salones[i]["Nombre"]}
+# ---------------------""")
+#         elif(Salones[i])["Trainer3"] == False:
+#             print(f"""---------------------
+# {Salones[i]["Nombre"]}
+# ---------------------""")
+#         elif(Salones[i])["Trainer4"] == False:
+#             print(f"""---------------------
+# {Salones[i]["Nombre"]}
+# ---------------------""")
+        
+        
+        
+        
+        
+        
+        
+     
+        
+        
+        
+#     for i, item in enumerate(Trainers):
+#         if Trainers[i]["Horario"]["1"] == True:
+#                 print(f"""
+# ---------------------
+# TRAINERS DISPONIBLES 
+#     6 AM - 10 AM
+# {Trainers[i]['Nombre']}, {Trainers[i]['Apellido']}
+# Edad {Trainers[i]['Edad']}, id {Trainers[i]['id']}
+# ---------------------
+# """)    
+#         elif(Trainers[i]["Horario"]["2"] == True):
+#             print(f"""
+# ---------------------
+# TRAINERS DISPONIBLES 
+#     10 AM - 2 PM
+# {Trainers[i]['Nombre']}, {Trainers[i]['Apellido']}
+# Edad {Trainers[i]['Edad']}, id {Trainers[i]['id']}
+# ---------------------
+# """)
+#         elif(Trainers[i]["Horario"]["3"] == True):
+#             print(f"""
+# ---------------------
+# TRAINERS DISPONIBLES 
+#     2 PM - 6 PM
+# {Trainers[i]['Nombre']}, {Trainers[i]['Apellido']}
+# Edad {Trainers[i]['Edad']}, id {Trainers[i]['id']}
+# ---------------------
+# """)
+#         elif(Trainers[i]["Horario"]["4"] == True):
+#             print(f"""
+# ---------------------
+# TRAINERS DISPONIBLES 
+#     6 PM - 10 PM
+# {Trainers[i]['Nombre']}, {Trainers[i]['Apellido']}
+# Edad {Trainers[i]['Edad']}, id {Trainers[i]['id']}
+# ---------------------
+# """)
