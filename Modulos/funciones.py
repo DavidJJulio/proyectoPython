@@ -67,7 +67,8 @@ def crearcamper():
             "6" : False,
             "7" : False
         },
-        "Riesgo" : 0
+        "Riesgo" : 0,
+        "Mod aprobados": 0
     })
     x = len(Lista)
     if Lista[x-1]["Edad"] < 18:
@@ -474,6 +475,7 @@ Trainer: {Salones[i]["idT1"]}
                                                         Campers[b]["Estado"]["2"] = False
                                                         Campers[b]["Estado"]["4"] = True
                                                         Campers[b]["Riesgo"] += 1
+                                                        Campers[b]["Mod aprobados"] +=1
                                                         if Campers[b]["Riesgo"] == 2:
                                                             Campers[b]["Estado"]["1"] = False
                                                             Campers[b]["Estado"]["2"] = False
@@ -502,6 +504,7 @@ Trainer: {Salones[i]["idT1"]}
                                                         Campers[b]["Estado"]["2"] = False
                                                         Campers[b]["Estado"]["4"] = True
                                                         Campers[b]["Riesgo"] += 1
+                                                        Campers[b]["Mod aprobados"] +=1
                                                         if Campers[b]["Riesgo"] == 2:
                                                             Campers[b]["Estado"]["1"] = False
                                                             Campers[b]["Estado"]["2"] = False
@@ -528,6 +531,7 @@ Trainer: {Salones[i]["idT1"]}
                                                         Campers[b]["Estado"]["2"] = False
                                                         Campers[b]["Estado"]["4"] = True
                                                         Campers[b]["Riesgo"] += 1
+                                                        Campers[b]["Mod aprobados"] +=1
                                                         if Campers[b]["Riesgo"] == 2:
                                                             Campers[b]["Estado"]["1"] = False
                                                             Campers[b]["Estado"]["2"] = False
@@ -582,6 +586,7 @@ Trainer: {Salones[i]["idT2"]}
                                                         Campers[b]["Estado"]["2"] = False
                                                         Campers[b]["Estado"]["4"] = True
                                                         Campers[b]["Riesgo"] += 1
+                                                        Campers[b]["Mod aprobados"] +=1
                                                         if Campers[b]["Riesgo"] == 2:
                                                             Campers[b]["Estado"]["1"] = False
                                                             Campers[b]["Estado"]["2"] = False
@@ -609,6 +614,7 @@ Trainer: {Salones[i]["idT2"]}
                                                         Campers[b]["Estado"]["2"] = False
                                                         Campers[b]["Estado"]["4"] = True
                                                         Campers[b]["Riesgo"] += 1
+                                                        Campers[b]["Mod aprobados"] +=1
                                                         if Campers[b]["Riesgo"] == 2:
                                                             Campers[b]["Estado"]["1"] = False
                                                             Campers[b]["Estado"]["2"] = False
@@ -635,6 +641,7 @@ Trainer: {Salones[i]["idT2"]}
                                                         Campers[b]["Estado"]["2"] = False
                                                         Campers[b]["Estado"]["4"] = True
                                                         Campers[b]["Riesgo"] += 1
+                                                        Campers[b]["Mod aprobados"] +=1
                                                         if Campers[b]["Riesgo"] == 2:
                                                             Campers[b]["Estado"]["1"] = False
                                                             Campers[b]["Estado"]["2"] = False
@@ -689,6 +696,7 @@ Trainer: {Salones[i]["idT3"]}
                                                         Campers[b]["Estado"]["2"] = False
                                                         Campers[b]["Estado"]["4"] = True
                                                         Campers[b]["Riesgo"] += 1
+                                                        Campers[b]["Mod aprobados"] +=1
                                                         if Campers[b]["Riesgo"] == 2:
                                                             Campers[b]["Estado"]["1"] = False
                                                             Campers[b]["Estado"]["2"] = False
@@ -716,6 +724,7 @@ Trainer: {Salones[i]["idT3"]}
                                                         Campers[b]["Estado"]["2"] = False
                                                         Campers[b]["Estado"]["4"] = True
                                                         Campers[b]["Riesgo"] += 1
+                                                        Campers[b]["Mod aprobados"] +=1
                                                         if Campers[b]["Riesgo"] == 2:
                                                             Campers[b]["Estado"]["1"] = False
                                                             Campers[b]["Estado"]["2"] = False
@@ -742,6 +751,7 @@ Trainer: {Salones[i]["idT3"]}
                                                         Campers[b]["Estado"]["2"] = False
                                                         Campers[b]["Estado"]["4"] = True
                                                         Campers[b]["Riesgo"] += 1
+                                                        Campers[b]["Mod aprobados"] +=1
                                                         if Campers[b]["Riesgo"] == 2:
                                                             Campers[b]["Estado"]["1"] = False
                                                             Campers[b]["Estado"]["2"] = False
@@ -796,6 +806,7 @@ Trainer: {Salones[i]["idT4"]}
                                                         Campers[b]["Estado"]["2"] = False
                                                         Campers[b]["Estado"]["4"] = True
                                                         Campers[b]["Riesgo"] += 1
+                                                        Campers[b]["Mod aprobados"] +=1
                                                         if Campers[b]["Riesgo"] == 2:
                                                             Campers[b]["Estado"]["1"] = False
                                                             Campers[b]["Estado"]["2"] = False
@@ -823,6 +834,7 @@ Trainer: {Salones[i]["idT4"]}
                                                         Campers[b]["Estado"]["2"] = False
                                                         Campers[b]["Estado"]["4"] = True
                                                         Campers[b]["Riesgo"] += 1
+                                                        Campers[b]["Mod aprobados"] +=1
                                                         if Campers[b]["Riesgo"] == 2:
                                                             Campers[b]["Estado"]["1"] = False
                                                             Campers[b]["Estado"]["2"] = False
@@ -849,6 +861,7 @@ Trainer: {Salones[i]["idT4"]}
                                                         Campers[b]["Estado"]["2"] = False
                                                         Campers[b]["Estado"]["4"] = True
                                                         Campers[b]["Riesgo"] += 1
+                                                        Campers[b]["Mod aprobados"] +=1
                                                         if Campers[b]["Riesgo"] == 2:
                                                             Campers[b]["Estado"]["1"] = False
                                                             Campers[b]["Estado"]["2"] = False
@@ -955,12 +968,19 @@ Trainer:
         ----------------------------
         """)
                     for i,item in enumerate(Salones):
-                        if Salones[i]["Capacidad2"] >0:
+                        if Salones[i]["Capacidad2"] >0 and len(Salones[i]["R2"]) != 0:
                             n+=1
                             print(f"""---------------------
 {n}.{Salones[i]["Nombre"]}
 Ruta: {Salones[i]["R2"]}
 Trainer: {Salones[i]["idT2"][1]}
+---------------------""")
+                        elif Salones[i]["Capacidad2"] >0 and len(Salones[i]["R2"]) == 0:
+                            n+=1
+                            print(f"""---------------------
+{n}.{Salones[i]["Nombre"]}
+Ruta: 
+Trainer: 
 ---------------------""")
                     u = int(input("A que salon desea ingresar el camper?: "))
                     for i,item in enumerate(Salones):
@@ -996,12 +1016,19 @@ Trainer: {Salones[i]["idT2"][1]}
         ----------------------------
         """)
                     for i,item in enumerate(Salones):
-                        if Salones[i]["Capacidad3"] >0:
+                        if Salones[i]["Capacidad3"] >0 and len(Salones[i]["R3"]) != 0:
                             n+=1
                             print(f"""---------------------
 {n}.{Salones[i]["Nombre"]}
 Ruta: {Salones[i]["R3"]}
 Trainer: {Salones[i]["idT3"][1]}
+---------------------""")
+                        elif Salones[i]["Capacidad3"] >0 and len(Salones[i]["R3"]) == 0:
+                            n+=1
+                            print(f"""---------------------
+{n}.{Salones[i]["Nombre"]}
+Ruta: 
+Trainer: 
 ---------------------""")
                     u = int(input("A que salon desea ingresar el camper?: "))
                     for i,item in enumerate(Salones):
@@ -1036,12 +1063,19 @@ Trainer: {Salones[i]["idT3"][1]}
         ----------------------------
         """)
                     for i,item in enumerate(Salones):
-                        if Salones[i]["Capacidad4"] >0:
+                        if Salones[i]["Capacidad4"] >0 and len(Salones[i]["R4"]) != 0:
                             n+=1
                             print(f"""---------------------
 {n}.{Salones[i]["Nombre"]}
 Ruta: {Salones[i]["R4"]}
 Trainer: {Salones[i]["idT4"][1]}
+---------------------""")
+                        elif Salones[i]["Capacidad4"] >0 and len(Salones[i]["R4"]) == 0:
+                            n+=1
+                            print(f"""---------------------
+{n}.{Salones[i]["Nombre"]}
+Ruta: 
+Trainer: 
 ---------------------""")
                     u = int(input("A que salon desea ingresar el camper?: "))
                     for i,item in enumerate(Salones):
@@ -1175,7 +1209,7 @@ Edad {Trainers[i]['Edad']}, id {Trainers[i]['id']}
                                     Trainers[y]["Horario"]["1"] = False
                                     Trainers[y]["Salon"].append(opc2)
                                     t = int(input("Ingrese la ruta que impartira el trainer\n1. JAVA\n2. NetCore\n3. NodeJS"))
-                                    Salones[i]["R1"].append(t)
+                                    Salones[i]["R1"] = t
                                     Trainers[y]["Ruta1"] = t
                                     Salones[i]["Clase 1"].append(input("Ingrese la fecha de inicio del programa (DD/MM/AA: )"))
                                     Salones[i]["Clase 1"].append(input("Ingrese la fecha de finalizacion del programa (DD/MM/AA): "))
@@ -1228,7 +1262,7 @@ Edad {Trainers[i]['Edad']}, id {Trainers[i]['id']}
                                     Trainers[y]["Horario"]["2"] = False
                                     Trainers[y]["Salon"].append(opc2)
                                     t = int(input("Ingrese la ruta que impartira el trainer\n1. JAVA\n2. NetCore\n3. NodeJS"))
-                                    Salones[i]["R2"].append(t)
+                                    Salones[i]["R2"] = t
                                     Trainers[y]["Ruta2"] = t
                                     Salones[i]["Clase 2"].append(input("Ingrese la fecha de inicio del programa (DD/MM/AA: )"))
                                     Salones[i]["Clase 2"].append(input("Ingrese la fecha de finalizacion del programa (DD/MM/AA): "))
@@ -1285,7 +1319,7 @@ Edad {Trainers[i]['Edad']}, id {Trainers[i]['id']}
                                     Trainers[y]["Horario"]["3"] = False
                                     Trainers[y]["Salon"].append(opc2)
                                     t = int(input("Ingrese la ruta que impartira el trainer\n1. JAVA\n2. NetCore\n3. NodeJS"))
-                                    Salones[i]["R3"].append(t)
+                                    Salones[i]["R3"] = t
                                     Trainers[y]["Ruta3"] = t
                                     Salones[i]["Clase 3"].append(input("Ingrese la fecha de inicio del programa (DD/MM/AA: )"))
                                     Salones[i]["Clase 3"].append(input("Ingrese la fecha de finalizacion del programa (DD/MM/AA): "))
@@ -1340,7 +1374,7 @@ Edad {Trainers[i]['Edad']}, id {Trainers[i]['id']}
                                     Trainers[y]["Horario"]["4"] = False
                                     Trainers[y]["Salon"].append(opc2)
                                     t = int(input("Ingrese la ruta que impartira el trainer\n1. JAVA\n2. NetCore\n3. NodeJS"))
-                                    Salones[i]["R4"].append(t)
+                                    Salones[i]["R4"] = t
                                     Trainers[y]["Ruta4"] = t
                                     Salones[i]["Clase 4"].append(input("Ingrese la fecha de inicio del programa (DD/MM/AA: )"))
                                     Salones[i]["Clase 4"].append(input("Ingrese la fecha de finalizacion del programa (DD/MM/AA): "))
@@ -1366,3 +1400,109 @@ Edad {Trainers[i]['Edad']}, id {Trainers[i]['id']}
     with open('JsonCampers.json', 'w') as f:
         json.dump(Campers, f, indent = 4)
         f.close()
+    
+def rep1():
+        os.system('clear')
+        with open("JsonCampers.json", "r") as f:
+            Campers = json.loads(f.read())
+            f.close()
+        print("""
+              CAMPERS EN ESTADO INSCRITO
+              """)
+        for i,item in enumerate(Campers):
+            if Campers[i]["Estado"]["2"] == True:
+                print(f"{Campers[i]['Nombre']}{Campers[i]['Apellido']}")
+        x = input("")              
+def rep2():
+        os.system('clear')
+        with open("JsonCampers.json", "r") as f:
+            Campers = json.loads(f.read())
+            f.close()
+        print("""
+              CAMPERS EN ESTADO APROBADO
+              """)
+        for i,item in enumerate(Campers):
+            if Campers[i]["Estado"]["3"] == True:
+                print(f"{Campers[i]['Nombre']}{Campers[i]['Apellido']}")   
+        x = input("")
+def rep3():
+        os.system('clear')
+        with open("JsonTrainers.json", "r") as f:
+            Trainers = json.loads(f.read())
+            f.close()
+        print("""
+              TRAINERS ASOCIADOS A CAMPUSLANDS
+              """)
+        for i,item in enumerate(Trainers):
+            print(f"{Trainers[i]['Nombre']}{Trainers[i]['Apellido']}") 
+        x = input("")           
+def rep4():
+        os.system('clear')
+        with open("JsonCampers.json", "r") as f:
+            Campers = json.loads(f.read())
+            f.close()
+        print("""
+              CAMPERS EN BAJO RENDIMIENTO
+              """)
+        for i,item in enumerate(Campers):
+            if Campers[i]["Estado"]["4"] == True:
+                print(f"{Campers[i]['Nombre']}{Campers[i]['Apellido']}")
+        x = input("")
+def rep5():
+        os.system('clear')
+        with open("JsonCampers.json", "r") as f:
+            Campers = json.loads(f.read())
+            f.close()
+        with open("JsonTrainers.json", "r") as f:
+            Trainers = json.loads(f.read())
+            f.close()
+        print("""
+              CAMPERS Y TRAINERS ASOCIADOS CON RUTAS
+              """)
+        print("RUTA 1: JAVA")
+        for i,item in enumerate(Campers):
+            if Campers[i]["Ruta"] == 1:
+                print(Campers[i]["Nombre"])
+                print(Campers[i]["Apellido"])
+        for b,item in enumerate(Trainers):
+            if Trainers[b]["Ruta1"] == 1:
+                print(Trainers[b]["Nombre"])    
+                print(Trainers[b]["Apellido"])
+        x = input("")
+        print("RUTA 2: NetCore")
+        for i,item in enumerate(Campers):
+            if Campers[i]["Ruta"] == 2:
+                print(Campers[i]["Nombre"])
+                print(Campers[i]["Apellido"])
+        for b,item in enumerate(Trainers):
+            if Trainers[b]["Ruta1"] == 2:
+                print(Trainers[b]["Nombre"])    
+                print(Trainers[b]["Apellido"])
+        x = input("")    
+        print("RUTA 3: NodeJS")
+        for i,item in enumerate(Campers):
+            if Campers[i]["Ruta"] == 3:
+                print(Campers[i]["Nombre"])
+                print(Campers[i]["Apellido"])
+        for b,item in enumerate(Trainers):
+            if Trainers[b]["Ruta1"] == 3:
+                print(Trainers[b]["Nombre"])    
+                print(Trainers[b]["Apellido"])
+        x = input("")         
+def rep6():
+        os.system('clear')
+        with open("JsonCampers.json", "r") as f:
+            Campers = json.loads(f.read())
+            f.close()
+        print("CAMPERS QUE HAN APROBADO MODULOS")
+        for i, item in enumerate(Campers):
+            if Campers[i]["Mod aprobados"] >0:
+                print(f"""
+                {Campers[i]['Nombre']} {Campers[i]['Apellido']}
+                Modulos aprobados: {Campers[i]['Mod aprobado']}
+                Ruta: {Campers[i]['Ruta']}
+                Trainer: {Campers[i]['Trainer'][0]}
+                    """)
+        x = input("")
+        
+     

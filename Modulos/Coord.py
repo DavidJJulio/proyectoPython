@@ -89,6 +89,12 @@ def sistemaco():
                          print(ValueError)
                case 3:
                     os.system('clear')
+                    funciones.rep1()
+                    funciones.rep2()
+                    funciones.rep3()
+                    funciones.rep4()
+                    funciones.rep5()
+                    funciones.rep6()
                     
                case 4:
                     bandera = False

@@ -13,9 +13,7 @@
             "Miguel"
         ],
         "Horario": true,
-        "Ruta": [
-            1
-        ],
+        "Ruta": 1,
         "Estado": {
             "1": false,
             "2": true,
@@ -26,6 +24,7 @@
             "7": false
         },
         "Riesgo": 0,
+        "Mod aprobados": 0,
         "Acudiente": "Alexander",
         "CelAcudiente": "3135328897"
     },
@@ -43,9 +42,7 @@
             "Miguel"
         ],
         "Horario": true,
-        "Ruta": [
-            1
-        ],
+        "Ruta": 1,
         "Estado": {
             "1": false,
             "2": true,
@@ -55,6 +52,7 @@
             "6": false,
             "7": false
         },
-        "Riesgo": 0
+        "Riesgo": 0,
+        "Mod aprobados": 0
     }
 ]
