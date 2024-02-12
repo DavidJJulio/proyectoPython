@@ -16,15 +16,15 @@
         "Ruta": 1,
         "Estado": {
             "1": false,
-            "2": true,
-            "3": false,
+            "2": false,
+            "3": true,
             "4": false,
             "5": false,
             "6": false,
             "7": false
         },
         "Riesgo": 0,
-        "Mod aprobados": 0,
+        "Mod aprobados": 1,
         "Acudiente": "Alexander",
         "CelAcudiente": "3135328897"
     },
@@ -45,7 +45,192 @@
         "Ruta": 1,
         "Estado": {
             "1": false,
+            "2": false,
+            "3": true,
+            "4": false,
+            "5": false,
+            "6": false,
+            "7": false
+        },
+        "Riesgo": 0,
+        "Mod aprobados": 1
+    },
+    {
+        "Nombre": "Hendrickson",
+        "Apellido": "Ruiz",
+        "Edad": 18,
+        "Genero": "0",
+        "Numero": [],
+        "id": 221,
+        "Salon": [
+            1
+        ],
+        "Trainer": [
+            "Miguel"
+        ],
+        "Horario": true,
+        "Ruta": 1,
+        "Estado": {
+            "1": false,
+            "2": false,
+            "3": false,
+            "4": true,
+            "5": false,
+            "6": false,
+            "7": false
+        },
+        "Riesgo": 1,
+        "Mod aprobados": 0
+    },
+    {
+        "Nombre": "Johan",
+        "Apellido": "D\u00edaz",
+        "Edad": 18,
+        "Genero": "Masculino",
+        "Numero": [],
+        "id": 222,
+        "Salon": [
+            1
+        ],
+        "Trainer": [
+            "Miguel"
+        ],
+        "Horario": true,
+        "Ruta": 1,
+        "Estado": {
+            "1": false,
+            "2": false,
+            "3": false,
+            "4": true,
+            "5": false,
+            "6": false,
+            "7": false
+        },
+        "Riesgo": 1,
+        "Mod aprobados": 0
+    },
+    {
+        "Nombre": "William",
+        "Apellido": "Meza",
+        "Edad": 18,
+        "Genero": "Masculino",
+        "Numero": [],
+        "id": 223,
+        "Salon": [
+            1
+        ],
+        "Trainer": [
+            "Miguel"
+        ],
+        "Horario": true,
+        "Ruta": 1,
+        "Estado": {
+            "1": false,
+            "2": false,
+            "3": false,
+            "4": true,
+            "5": false,
+            "6": false,
+            "7": false
+        },
+        "Riesgo": 1,
+        "Mod aprobados": 0
+    },
+    {
+        "Nombre": "Gabriel",
+        "Apellido": "Rodriguez",
+        "Edad": 23,
+        "Genero": "Masculino",
+        "Numero": [],
+        "id": 224,
+        "Salon": [
+            1
+        ],
+        "Trainer": [
+            "Miguel"
+        ],
+        "Horario": true,
+        "Ruta": 1,
+        "Estado": {
+            "1": false,
+            "2": false,
+            "3": true,
+            "4": true,
+            "5": false,
+            "6": false,
+            "7": false
+        },
+        "Riesgo": 1,
+        "Mod aprobados": 1
+    },
+    {
+        "Nombre": "Karol",
+        "Apellido": "Moreno",
+        "Edad": 19,
+        "Genero": "Femenino",
+        "Numero": [],
+        "id": 225,
+        "Salon": [
+            1
+        ],
+        "Trainer": [
+            "Miguel"
+        ],
+        "Horario": true,
+        "Ruta": 1,
+        "Estado": {
+            "1": false,
+            "2": false,
+            "3": true,
+            "4": false,
+            "5": false,
+            "6": false,
+            "7": false
+        },
+        "Riesgo": 0,
+        "Mod aprobados": 1
+    },
+    {
+        "Nombre": "Pepito",
+        "Apellido": "Alcachofa",
+        "Edad": 20,
+        "Genero": "Masculino",
+        "Numero": [],
+        "id": 227,
+        "Salon": [],
+        "Trainer": [],
+        "Horario": {
+            "1": false
+        },
+        "Ruta": 0,
+        "Estado": {
+            "1": false,
             "2": true,
+            "3": false,
+            "4": false,
+            "5": false,
+            "6": false,
+            "7": false
+        },
+        "Riesgo": 0,
+        "Mod aprobados": 0
+    },
+    {
+        "Nombre": "Juanito",
+        "Apellido": "Manos Largas",
+        "Edad": 21,
+        "Genero": "Masculino",
+        "Numero": [],
+        "id": 228,
+        "Salon": [],
+        "Trainer": [],
+        "Horario": {
+            "1": false
+        },
+        "Ruta": 0,
+        "Estado": {
+            "1": true,
+            "2": false,
             "3": false,
             "4": false,
             "5": false,

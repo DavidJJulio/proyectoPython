@@ -1,7 +1,7 @@
 [
     {
         "Nombre": "Artemis",
-        "Capacidad1": 31,
+        "Capacidad1": 26,
         "Capacidad2": 33,
         "Capacidad3": 33,
         "Capacidad4": 33,
@@ -28,7 +28,12 @@
         "R4": 0,
         "Camp1": [
             1092732487,
-            123456789
+            123456789,
+            221,
+            222,
+            223,
+            224,
+            225
         ],
         "Camp2": [],
         "Camp3": [],
@@ -49,20 +54,23 @@
         "Capacidad3": 33,
         "Capacidad4": 33,
         "Horario": {
-            "1": true,
+            "1": false,
             "2": true,
             "3": true,
             "4": true
         },
-        "Trainer1": false,
+        "Trainer1": true,
         "Trainer2": false,
         "Trainer3": false,
         "Trainer4": false,
-        "idT1": [],
+        "idT1": [
+            331,
+            "Johver"
+        ],
         "idT2": [],
         "idT3": [],
         "idT4": [],
-        "R1": 0,
+        "R1": 2,
         "R2": 0,
         "R3": 0,
         "R4": 0,
@@ -70,7 +78,10 @@
         "Camp2": [],
         "Camp3": [],
         "Camp4": [],
-        "Clase 1": [],
+        "Clase 1": [
+            "10/10/10",
+            "12/12/12"
+        ],
         "Clase 2": [],
         "Clase 3": [],
         "Clase 4": [],
@@ -83,20 +94,23 @@
         "Capacidad3": 33,
         "Capacidad4": 33,
         "Horario": {
-            "1": true,
+            "1": false,
             "2": true,
             "3": true,
             "4": true
         },
-        "Trainer1": false,
+        "Trainer1": true,
         "Trainer2": false,
         "Trainer3": false,
         "Trainer4": false,
-        "idT1": [],
+        "idT1": [
+            332,
+            "Pedro"
+        ],
         "idT2": [],
         "idT3": [],
         "idT4": [],
-        "R1": 0,
+        "R1": 3,
         "R2": 0,
         "R3": 0,
         "R4": 0,
@@ -104,7 +118,10 @@
         "Camp2": [],
         "Camp3": [],
         "Camp4": [],
-        "Clase 1": [],
+        "Clase 1": [
+            "10/10/10",
+            "12/12/12"
+        ],
         "Clase 2": [],
         "Clase 3": [],
         "Clase 4": [],

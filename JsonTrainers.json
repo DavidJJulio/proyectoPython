@@ -19,5 +19,47 @@
         "Ruta2": 0,
         "Ruta3": 0,
         "Ruta4": 0
+    },
+    {
+        "Nombre": "Johver",
+        "Apellido": "Pardo",
+        "Edad": 99,
+        "Genero": "Masculino",
+        "Numero": [],
+        "id": 331,
+        "Horario": {
+            "1": false,
+            "2": true,
+            "3": true,
+            "4": true
+        },
+        "Salon": [
+            2
+        ],
+        "Ruta1": 2,
+        "Ruta2": 0,
+        "Ruta3": 0,
+        "Ruta4": 0
+    },
+    {
+        "Nombre": "Pedro",
+        "Apellido": "Villa",
+        "Edad": 30,
+        "Genero": "Masculino",
+        "Numero": [],
+        "id": 332,
+        "Horario": {
+            "1": false,
+            "2": true,
+            "3": true,
+            "4": true
+        },
+        "Salon": [
+            3
+        ],
+        "Ruta1": 3,
+        "Ruta2": 0,
+        "Ruta3": 0,
+        "Ruta4": 0
     }
 ]

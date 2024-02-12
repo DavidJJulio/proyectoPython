@@ -79,12 +79,8 @@ def crearcamper():
     n = (input
 ("""
 -------------
-1. Inscrito
-2. Aprobado
-3. Cursando
-4. Graduado
-5. Expulsado
-6. Retirado
+1. Pre-inscrito
+2. Inscrito
 -------------
 Ingrese el estado del camper: 
 """))
@@ -179,20 +175,21 @@ Edad {Lista[i]['Edad']}, id {Lista[i]['id']}
             file.close()
 def actualizartrainer():
     bandera = True
-    with open('JsonTrainers.json', 'r') as f:
-        Lista = json.loads(f.read())
-        os.system('clear')
     with open('JsonRutas.json', 'r') as f:
         Rutas = json.loads(f.read())
         f.close()
-    for i, item in enumerate(Lista):
+    with open('JsonTrainers.json', 'r') as f:
+        Lista = json.loads(f.read())
+        os.system('clear')
+        f.close()
+        for i, item in enumerate(Lista):
             print(f"""
     ------------------
     {Lista[i]['Nombre']}, {Lista[i]['Apellido']}
     Edad {Lista[i]['Edad']}, {Lista[i]['id']}
     ------------------
     """)
-            identificacion = int(input("Ingrese el id del trainer que desea actualizar: "))
+        identificacion = int(input("Ingrese el id del trainer que desea actualizar: "))
     for i, item in enumerate(Lista):
             if(Lista[i]["id"] == identificacion):
                 print(f"""
@@ -225,7 +222,10 @@ Edad {Lista[i]['Edad']}, id {Lista[i]['id']}
                "4" : True
            },
            "Salon" : [],
-           "Ruta" : []
+           "Ruta1" : 0,
+           "Ruta2" : 0,
+           "Ruta3" : 0,
+           "Ruta4" : 0
         })
                         print(""")
                     -------------------------
@@ -453,29 +453,28 @@ Ruta: {Salones[i]["R1"]}
 Trainer: {Salones[i]["idT1"]}
 ---------------------""")
                     opc = int(input("Seleccione un salon"))
-                    for i,item in enumerate(Salones):
-                        if Salones[i]["Trainer1"] == True:
+                    if Salones[opc-1]["Trainer1"] == True:
                             try:
                                 match(opc):
                                     case 1:
                                         for i, item in enumerate(Salones[opc-1]["Camp1"]):
-                                            k +=1
                                             for b,item in enumerate(Campers):
-                                                if Salones[opc-1]["Camp1"][i] == Campers[b]["id"]:
+                                                if Salones[opc-1]["Camp1"][b] == Campers[i]["id"]:
                                                     a = int(input(f"Ingrese el valor de la prueba practica del estudiante({Campers[b]['Nombre']}): "))
                                                     d = int(input(f"Ingrese el valor de la prueba examen del estudiante({Campers[b]['Nombre']}): "))
                                                     c = int(input(f"Ingrese el promedio de las notas(Trabajos) del estudiante({Campers[b]['Nombre']}): "))
                                                     a = a *0.6
                                                     d = d *0.3
                                                     c = c *0.3
-                                                    if((a+b+c) >60):
+                                                    if((a+d+c) >60):
                                                         Campers[b]["Estado"]["3"] = True
                                                         Campers[b]["Estado"]["2"] = False
+                                                        Campers[b]["Mod aprobados"] +=1
                                                     else:
                                                         Campers[b]["Estado"]["2"] = False
                                                         Campers[b]["Estado"]["4"] = True
                                                         Campers[b]["Riesgo"] += 1
-                                                        Campers[b]["Mod aprobados"] +=1
+                                                        
                                                         if Campers[b]["Riesgo"] == 2:
                                                             Campers[b]["Estado"]["1"] = False
                                                             Campers[b]["Estado"]["2"] = False
@@ -484,11 +483,12 @@ Trainer: {Salones[i]["idT1"]}
                                                             Campers[b]["Estado"]["5"] = False
                                                             Campers[b]["Estado"]["6"] = False
                                                             Campers[b]["Estado"]["7"] = True
+                                                else:
+                                                    pass
                                                             
 
                                     case 2:
                                         for i, item in enumerate(Salones[opc-1]["Camp1"]):
-                                            k +=1
                                             for b,item in enumerate(Campers):
                                                 if Salones[opc-1]["Camp1"][i] == Campers[b]["id"]:
                                                     a = int(input(f"Ingrese el valor de la prueba practica del estudiante({Campers[b]['Nombre']}): "))
@@ -497,14 +497,15 @@ Trainer: {Salones[i]["idT1"]}
                                                     a = a *0.6
                                                     d = d *0.3
                                                     c = c *0.3
-                                                    if((a+b+c) >60):
+                                                    if((a+d+c) >60):
                                                         Campers[b]["Estado"]["3"] = True
                                                         Campers[b]["Estado"]["2"] = False
+                                                        Campers[b]["Mod aprobados"] +=1
                                                     else:
                                                         Campers[b]["Estado"]["2"] = False
                                                         Campers[b]["Estado"]["4"] = True
                                                         Campers[b]["Riesgo"] += 1
-                                                        Campers[b]["Mod aprobados"] +=1
+                                                        
                                                         if Campers[b]["Riesgo"] == 2:
                                                             Campers[b]["Estado"]["1"] = False
                                                             Campers[b]["Estado"]["2"] = False
@@ -515,7 +516,6 @@ Trainer: {Salones[i]["idT1"]}
                                                             Campers[b]["Estado"]["7"] = True
                                     case 3:
                                         for i, item in enumerate(Salones[opc-1]["Camp1"]):
-                                            k +=1
                                             for b,item in enumerate(Campers):
                                                 if Salones[opc-1]["Camp1"][i] == Campers[b]["id"]:
                                                     a = int(input(f"Ingrese el valor de la prueba practica del estudiante({Campers[b]['Nombre']}): "))
@@ -524,14 +524,15 @@ Trainer: {Salones[i]["idT1"]}
                                                     a = a *0.6
                                                     d = d *0.3
                                                     c = c *0.3
-                                                    if((a+b+c) >60):
+                                                    if((a+d+c) >60):
                                                         Campers[b]["Estado"]["3"] = True
                                                         Campers[b]["Estado"]["2"] = False
+                                                        Campers[b]["Mod aprobados"] +=1
                                                     else:
                                                         Campers[b]["Estado"]["2"] = False
                                                         Campers[b]["Estado"]["4"] = True
                                                         Campers[b]["Riesgo"] += 1
-                                                        Campers[b]["Mod aprobados"] +=1
+                                                        
                                                         if Campers[b]["Riesgo"] == 2:
                                                             Campers[b]["Estado"]["1"] = False
                                                             Campers[b]["Estado"]["2"] = False
@@ -543,7 +544,7 @@ Trainer: {Salones[i]["idT1"]}
                         
                             except:
                                 print("")
-                        else:
+                    else:
                             print("No existen salones con clases cursando en este")
                 except:
                     print("")
@@ -570,7 +571,6 @@ Trainer: {Salones[i]["idT2"]}
                                 match(opc):
                                     case 1:
                                         for i, item in enumerate(Salones[opc-1]["Camp2"]):
-                                            k +=1
                                             for b,item in enumerate(Campers):
                                                 if Salones[opc-1]["Camp2"][i] == Campers[b]["id"]:
                                                     a = int(input(f"Ingrese el valor de la prueba practica del estudiante({Campers[b]['Nombre']}): "))
@@ -579,14 +579,15 @@ Trainer: {Salones[i]["idT2"]}
                                                     a = a *0.6
                                                     d = d *0.3
                                                     c = c *0.3
-                                                    if((a+b+c) >60):
+                                                    if((a+d+c) >60):
                                                         Campers[b]["Estado"]["3"] = True
                                                         Campers[b]["Estado"]["2"] = False
+                                                        Campers[b]["Mod aprobados"] +=1
                                                     else:
                                                         Campers[b]["Estado"]["2"] = False
                                                         Campers[b]["Estado"]["4"] = True
                                                         Campers[b]["Riesgo"] += 1
-                                                        Campers[b]["Mod aprobados"] +=1
+                                                        
                                                         if Campers[b]["Riesgo"] == 2:
                                                             Campers[b]["Estado"]["1"] = False
                                                             Campers[b]["Estado"]["2"] = False
@@ -598,7 +599,6 @@ Trainer: {Salones[i]["idT2"]}
 
                                     case 2:
                                         for i, item in enumerate(Salones[opc-1]["Camp2"]):
-                                            k +=1
                                             for b,item in enumerate(Campers):
                                                 if Salones[opc-1]["Camp2"][i] == Campers[b]["id"]:
                                                     a = int(input(f"Ingrese el valor de la prueba practica del estudiante({Campers[b]['Nombre']}): "))
@@ -607,14 +607,15 @@ Trainer: {Salones[i]["idT2"]}
                                                     a = a *0.6
                                                     d = d *0.3
                                                     c = c *0.3
-                                                    if((a+b+c) >60):
+                                                    if((a+d+c) >60):
                                                         Campers[b]["Estado"]["3"] = True
                                                         Campers[b]["Estado"]["2"] = False
+                                                        Campers[b]["Mod aprobados"] +=1
                                                     else:
                                                         Campers[b]["Estado"]["2"] = False
                                                         Campers[b]["Estado"]["4"] = True
                                                         Campers[b]["Riesgo"] += 1
-                                                        Campers[b]["Mod aprobados"] +=1
+                                                        
                                                         if Campers[b]["Riesgo"] == 2:
                                                             Campers[b]["Estado"]["1"] = False
                                                             Campers[b]["Estado"]["2"] = False
@@ -625,7 +626,6 @@ Trainer: {Salones[i]["idT2"]}
                                                             Campers[b]["Estado"]["7"] = True
                                     case 3:
                                         for i, item in enumerate(Salones[opc-1]["Camp2"]):
-                                            k +=1
                                             for b,item in enumerate(Campers):
                                                 if Salones[opc-1]["Camp2"][i] == Campers[b]["id"]:
                                                     a = int(input(f"Ingrese el valor de la prueba practica del estudiante({Campers[b]['Nombre']}): "))
@@ -634,14 +634,15 @@ Trainer: {Salones[i]["idT2"]}
                                                     a = a *0.6
                                                     d = d *0.3
                                                     c = c *0.3
-                                                    if((a+b+c) >60):
+                                                    if((a+d+c) >60):
                                                         Campers[b]["Estado"]["3"] = True
                                                         Campers[b]["Estado"]["2"] = False
+                                                        Campers[b]["Mod aprobados"] +=1
                                                     else:
                                                         Campers[b]["Estado"]["2"] = False
                                                         Campers[b]["Estado"]["4"] = True
                                                         Campers[b]["Riesgo"] += 1
-                                                        Campers[b]["Mod aprobados"] +=1
+                                                        
                                                         if Campers[b]["Riesgo"] == 2:
                                                             Campers[b]["Estado"]["1"] = False
                                                             Campers[b]["Estado"]["2"] = False
@@ -680,7 +681,6 @@ Trainer: {Salones[i]["idT3"]}
                                 match(opc):
                                     case 1:
                                         for i, item in enumerate(Salones[opc-1]["Camp3"]):
-                                            k +=1
                                             for b,item in enumerate(Campers):
                                                 if Salones[opc-1]["Camp3"][i] == Campers[b]["id"]:
                                                     a = int(input(f"Ingrese el valor de la prueba practica del estudiante({Campers[b]['Nombre']}): "))
@@ -689,14 +689,15 @@ Trainer: {Salones[i]["idT3"]}
                                                     a = a *0.6
                                                     d = d *0.3
                                                     c = c *0.3
-                                                    if((a+b+c) >60):
+                                                    if((a+d+c) >60):
                                                         Campers[b]["Estado"]["3"] = True
                                                         Campers[b]["Estado"]["2"] = False
+                                                        Campers[b]["Mod aprobados"] +=1
                                                     else:
                                                         Campers[b]["Estado"]["2"] = False
                                                         Campers[b]["Estado"]["4"] = True
                                                         Campers[b]["Riesgo"] += 1
-                                                        Campers[b]["Mod aprobados"] +=1
+                                                        
                                                         if Campers[b]["Riesgo"] == 2:
                                                             Campers[b]["Estado"]["1"] = False
                                                             Campers[b]["Estado"]["2"] = False
@@ -708,7 +709,6 @@ Trainer: {Salones[i]["idT3"]}
 
                                     case 2:
                                         for i, item in enumerate(Salones[opc-1]["Camp3"]):
-                                            k +=1
                                             for b,item in enumerate(Campers):
                                                 if Salones[opc-1]["Camp3"][i] == Campers[b]["id"]:
                                                     a = int(input(f"Ingrese el valor de la prueba practica del estudiante({Campers[b]['Nombre']}): "))
@@ -717,14 +717,15 @@ Trainer: {Salones[i]["idT3"]}
                                                     a = a *0.6
                                                     d = d *0.3
                                                     c = c *0.3
-                                                    if((a+b+c) >60):
+                                                    if((a+d+c) >60):
                                                         Campers[b]["Estado"]["3"] = True
                                                         Campers[b]["Estado"]["2"] = False
+                                                        Campers[b]["Mod aprobados"] +=1
                                                     else:
                                                         Campers[b]["Estado"]["2"] = False
                                                         Campers[b]["Estado"]["4"] = True
                                                         Campers[b]["Riesgo"] += 1
-                                                        Campers[b]["Mod aprobados"] +=1
+                                                        
                                                         if Campers[b]["Riesgo"] == 2:
                                                             Campers[b]["Estado"]["1"] = False
                                                             Campers[b]["Estado"]["2"] = False
@@ -735,7 +736,6 @@ Trainer: {Salones[i]["idT3"]}
                                                             Campers[b]["Estado"]["7"] = True
                                     case 3:
                                         for i, item in enumerate(Salones[opc-1]["Camp3"]):
-                                            k +=1
                                             for b,item in enumerate(Campers):
                                                 if Salones[opc-1]["Camp3"][i] == Campers[b]["id"]:
                                                     a = int(input(f"Ingrese el valor de la prueba practica del estudiante({Campers[b]['Nombre']}): "))
@@ -744,14 +744,15 @@ Trainer: {Salones[i]["idT3"]}
                                                     a = a *0.6
                                                     d = d *0.3
                                                     c = c *0.3
-                                                    if((a+b+c) >60):
+                                                    if((a+d+c) >60):
                                                         Campers[b]["Estado"]["3"] = True
                                                         Campers[b]["Estado"]["2"] = False
+                                                        Campers[b]["Mod aprobados"] +=1
                                                     else:
                                                         Campers[b]["Estado"]["2"] = False
                                                         Campers[b]["Estado"]["4"] = True
                                                         Campers[b]["Riesgo"] += 1
-                                                        Campers[b]["Mod aprobados"] +=1
+                                                        
                                                         if Campers[b]["Riesgo"] == 2:
                                                             Campers[b]["Estado"]["1"] = False
                                                             Campers[b]["Estado"]["2"] = False
@@ -802,11 +803,12 @@ Trainer: {Salones[i]["idT4"]}
                                                     if((a+b+c) >60):
                                                         Campers[b]["Estado"]["3"] = True
                                                         Campers[b]["Estado"]["2"] = False
+                                                        Campers[b]["Mod aprobados"] +=1
                                                     else:
                                                         Campers[b]["Estado"]["2"] = False
                                                         Campers[b]["Estado"]["4"] = True
                                                         Campers[b]["Riesgo"] += 1
-                                                        Campers[b]["Mod aprobados"] +=1
+                                                        
                                                         if Campers[b]["Riesgo"] == 2:
                                                             Campers[b]["Estado"]["1"] = False
                                                             Campers[b]["Estado"]["2"] = False
@@ -830,11 +832,12 @@ Trainer: {Salones[i]["idT4"]}
                                                     if((a+b+c) >60):
                                                         Campers[b]["Estado"]["3"] = True
                                                         Campers[b]["Estado"]["2"] = False
+                                                        Campers[b]["Mod aprobados"] +=1
                                                     else:
                                                         Campers[b]["Estado"]["2"] = False
                                                         Campers[b]["Estado"]["4"] = True
                                                         Campers[b]["Riesgo"] += 1
-                                                        Campers[b]["Mod aprobados"] +=1
+                                                        
                                                         if Campers[b]["Riesgo"] == 2:
                                                             Campers[b]["Estado"]["1"] = False
                                                             Campers[b]["Estado"]["2"] = False
@@ -857,11 +860,12 @@ Trainer: {Salones[i]["idT4"]}
                                                     if((a+b+c) >60):
                                                         Campers[b]["Estado"]["3"] = True
                                                         Campers[b]["Estado"]["2"] = False
+                                                        Campers[b]["Mod aprobados"] +=1
                                                     else:
                                                         Campers[b]["Estado"]["2"] = False
                                                         Campers[b]["Estado"]["4"] = True
                                                         Campers[b]["Riesgo"] += 1
-                                                        Campers[b]["Mod aprobados"] +=1
+                                                        
                                                         if Campers[b]["Riesgo"] == 2:
                                                             Campers[b]["Estado"]["1"] = False
                                                             Campers[b]["Estado"]["2"] = False
@@ -909,7 +913,7 @@ def saloncamper():
 
 """)
     try:
-        opc = int(input("Que horario desea?"))
+        opc = int(input("Que horario desea?: "))
         match(opc):
             case 1:
                 os.system('clear')
@@ -920,14 +924,14 @@ def saloncamper():
         ----------------------------
         """)
                     for i,item in enumerate(Salones):
-                        if Salones[i]["Capacidad1"] >0 and len(Salones[i]["R1"]) != 0:
+                        if Salones[i]["Capacidad1"] >0 and Salones[i]["R1"] != 0:
                             n+=1
                             print(f"""---------------------
 {n}.{Salones[i]["Nombre"]}
 Ruta: {Salones[i]["R1"]}
 Trainer: {Salones[i]["idT1"]}
 ---------------------""")
-                        elif Salones[i]["Capacidad1"] >0 and len(Salones[i]["R1"]) == 0:
+                        elif Salones[i]["Capacidad1"] >0 and Salones[i]["R1"] == 0:
                             n+=1
                             print(f"""---------------------
 {n}.{Salones[i]["Nombre"]}
@@ -951,9 +955,10 @@ Trainer:
                                     Campers[b]["Horario"] = True
                                     Salones[i]["Capacidad1"] -=1
                                     Salones[i]["Camp1"].append(Campers[b]["id"])
-                                elif(Campers[b]["id"] != d and len(Campers[b]["Salon"]) == 0 and Campers[b]["Estado"]["2"] != True):
+                                elif(Campers[b]["id"] == d and len(Campers[b]["Salon"]) == 0 and Campers[b]["Estado"]["2"] != True):
                                     print("Este camper no esta disponible para agregarse a un salon")
                                     x = input("Ingrese enter para continuar...")
+                                    break
                                 else:
                                     pass
                 except:     
@@ -968,14 +973,14 @@ Trainer:
         ----------------------------
         """)
                     for i,item in enumerate(Salones):
-                        if Salones[i]["Capacidad2"] >0 and len(Salones[i]["R2"]) != 0:
+                        if Salones[i]["Capacidad2"] >0 and Salones[i]["R2"] != 0:
                             n+=1
                             print(f"""---------------------
 {n}.{Salones[i]["Nombre"]}
 Ruta: {Salones[i]["R2"]}
 Trainer: {Salones[i]["idT2"][1]}
 ---------------------""")
-                        elif Salones[i]["Capacidad2"] >0 and len(Salones[i]["R2"]) == 0:
+                        elif Salones[i]["Capacidad2"] >0 and Salones[i]["R2"] == 0:
                             n+=1
                             print(f"""---------------------
 {n}.{Salones[i]["Nombre"]}
@@ -999,9 +1004,10 @@ Trainer:
                                     Campers[b]["Horario"] = True
                                     Salones[i]["Capacidad2"] -=1
                                     Salones[i]["Camp2"].append(Campers[b]["id"])
-                                elif(Campers[b]["id"] != d and len(Campers[b]["Salon"]) == 0 and Campers[b]["Estado"]["2"] != True):
+                                elif(Campers[b]["id"] == d and len(Campers[b]["Salon"]) == 0 and Campers[b]["Estado"]["2"] != True):
                                     print("Este camper no esta disponible para agregarse a un salon")
                                     x = input("Ingrese enter para continuar...")
+                                    break
                                 else:
                                     pass
                 except:
@@ -1016,14 +1022,14 @@ Trainer:
         ----------------------------
         """)
                     for i,item in enumerate(Salones):
-                        if Salones[i]["Capacidad3"] >0 and len(Salones[i]["R3"]) != 0:
+                        if Salones[i]["Capacidad3"] >0 and Salones[i]["R3"] != 0:
                             n+=1
                             print(f"""---------------------
 {n}.{Salones[i]["Nombre"]}
 Ruta: {Salones[i]["R3"]}
 Trainer: {Salones[i]["idT3"][1]}
 ---------------------""")
-                        elif Salones[i]["Capacidad3"] >0 and len(Salones[i]["R3"]) == 0:
+                        elif Salones[i]["Capacidad3"] >0 and Salones[i]["R3"] == 0:
                             n+=1
                             print(f"""---------------------
 {n}.{Salones[i]["Nombre"]}
@@ -1047,9 +1053,10 @@ Trainer:
                                     Campers[b]["Horario"] = True
                                     Salones[i]["Capacidad3"] -=1
                                     Salones[i]["Camp1"].append(Campers[b]["id"])
-                                elif(Campers[b]["id"] != d and len(Campers[b]["Salon"]) == 0 and Campers[b]["Estado"]["2"] != True):
+                                elif(Campers[b]["id"] == d and len(Campers[b]["Salon"]) == 0 and Campers[b]["Estado"]["2"] != True):
                                     print("Este camper no esta disponible para agregarse a un salon")
                                     x = input("Ingrese enter para continuar...")
+                                    break
                                 else:
                                     pass
                 except:
@@ -1063,14 +1070,14 @@ Trainer:
         ----------------------------
         """)
                     for i,item in enumerate(Salones):
-                        if Salones[i]["Capacidad4"] >0 and len(Salones[i]["R4"]) != 0:
+                        if Salones[i]["Capacidad4"] >0 and Salones[i]["R4"] != 0:
                             n+=1
                             print(f"""---------------------
 {n}.{Salones[i]["Nombre"]}
 Ruta: {Salones[i]["R4"]}
 Trainer: {Salones[i]["idT4"][1]}
 ---------------------""")
-                        elif Salones[i]["Capacidad4"] >0 and len(Salones[i]["R4"]) == 0:
+                        elif Salones[i]["Capacidad4"] >0 and Salones[i]["R4"] == 0:
                             n+=1
                             print(f"""---------------------
 {n}.{Salones[i]["Nombre"]}
@@ -1094,9 +1101,10 @@ Trainer:
                                     Campers[b]["Horario"] = True
                                     Salones[i]["Capacidad4"] -=1
                                     Salones[i]["Camp4"].append(Campers[b]["id"])
-                                elif(Campers[b]["id"] != d and len(Campers[b]["Salon"]) == 0 and Campers[b]["Estado"]["2"] != True):
+                                elif(Campers[b]["id"] == d and len(Campers[b]["Salon"]) == 0 and Campers[b]["Estado"]["2"] != True):
                                     print("Este camper no esta disponible para agregarse a un salon")
                                     x = input("Ingrese enter para continuar...")
+                                    break
                                 else:
                                     pass
                 except:
@@ -1127,11 +1135,11 @@ def prueba_admision():
 Edad {Campers[i]['Edad']}, id {Campers[i]['id']}
 ---------------------
 """)
-    p = int(input("A cual camper desea ingresarle notas del examen de admision?"))
+    p = int(input("A cual camper desea ingresarle notas del examen de admision?: "))
     for i,item in enumerate(Campers):
         if (Campers[i]["id"] == p):
             if Campers[i]["Estado"]["1"] == True:
-                o = int(input("Cual fue su puntaje en el examen"))
+                o = int(input("Cual fue su puntaje en el examen: "))
                 if(o >= 60):
                     Campers[i]["Estado"]["2"] = True
                     Campers[i]["Estado"]["1"] = False
@@ -1197,7 +1205,7 @@ Edad {Trainers[i]['Edad']}, id {Trainers[i]['id']}
                                 if Salones[i]["Trainer1"] == False:
                                     n+=1
                                     print(f"""---------------------
-{n}.{Salones[i]["Nombre"]}
+{Salones[i]["Codigo"]}.{Salones[i]["Nombre"]}
 ---------------------""")
                             opc2 = int(input("Ingrese a que salon quiere ingresar este trainer: "))
                             for i,item in enumerate(Salones):
@@ -1208,10 +1216,10 @@ Edad {Trainers[i]['Edad']}, id {Trainers[i]['id']}
                                     Salones[i]["Horario"]["1"] = False
                                     Trainers[y]["Horario"]["1"] = False
                                     Trainers[y]["Salon"].append(opc2)
-                                    t = int(input("Ingrese la ruta que impartira el trainer\n1. JAVA\n2. NetCore\n3. NodeJS"))
+                                    t = int(input("Ingrese la ruta que impartira el trainer\n1. JAVA\n2. NetCore\n3. NodeJS:\n"))
                                     Salones[i]["R1"] = t
                                     Trainers[y]["Ruta1"] = t
-                                    Salones[i]["Clase 1"].append(input("Ingrese la fecha de inicio del programa (DD/MM/AA: )"))
+                                    Salones[i]["Clase 1"].append(input("Ingrese la fecha de inicio del programa (DD/MM/AA): "))
                                     Salones[i]["Clase 1"].append(input("Ingrese la fecha de finalizacion del programa (DD/MM/AA): "))
                                     for b, item in enumerate(Salones[i]["Camp1"]):
                                         for c,item in enumerate(Campers):
@@ -1400,7 +1408,21 @@ Edad {Trainers[i]['Edad']}, id {Trainers[i]['id']}
     with open('JsonCampers.json', 'w') as f:
         json.dump(Campers, f, indent = 4)
         f.close()
-    
+def campersriesgo():
+    with open('JsonCampers.json', 'r') as f:
+        Campers = json.loads(f.read())
+        f.close()
+    print("""---------------------
+CAMPERS EN RIESGO
+---------------------""")
+    for i, item in enumerate(Campers):
+        if Campers[i]["Riesgo"] == 1:
+            print(f"""---------------------
+{Campers[i]['Nombre']} {Campers[i]['Apellido']}
+---------------------""")
+        else:
+            print("")
+    x = input("")
 def rep1():
         os.system('clear')
         with open("JsonCampers.json", "r") as f:
@@ -1411,7 +1433,7 @@ def rep1():
               """)
         for i,item in enumerate(Campers):
             if Campers[i]["Estado"]["2"] == True:
-                print(f"{Campers[i]['Nombre']}{Campers[i]['Apellido']}")
+                print(f"{Campers[i]['Nombre']} {Campers[i]['Apellido']}")
         x = input("")              
 def rep2():
         os.system('clear')
@@ -1423,7 +1445,7 @@ def rep2():
               """)
         for i,item in enumerate(Campers):
             if Campers[i]["Estado"]["3"] == True:
-                print(f"{Campers[i]['Nombre']}{Campers[i]['Apellido']}")   
+                print(f"{Campers[i]['Nombre']} {Campers[i]['Apellido']}")   
         x = input("")
 def rep3():
         os.system('clear')
@@ -1434,7 +1456,7 @@ def rep3():
               TRAINERS ASOCIADOS A CAMPUSLANDS
               """)
         for i,item in enumerate(Trainers):
-            print(f"{Trainers[i]['Nombre']}{Trainers[i]['Apellido']}") 
+            print(f"{Trainers[i]['Nombre']} {Trainers[i]['Apellido']}") 
         x = input("")           
 def rep4():
         os.system('clear')
@@ -1446,7 +1468,7 @@ def rep4():
               """)
         for i,item in enumerate(Campers):
             if Campers[i]["Estado"]["4"] == True:
-                print(f"{Campers[i]['Nombre']}{Campers[i]['Apellido']}")
+                print(f"{Campers[i]['Nombre']} {Campers[i]['Apellido']}")
         x = input("")
 def rep5():
         os.system('clear')
@@ -1462,32 +1484,26 @@ def rep5():
         print("RUTA 1: JAVA")
         for i,item in enumerate(Campers):
             if Campers[i]["Ruta"] == 1:
-                print(Campers[i]["Nombre"])
-                print(Campers[i]["Apellido"])
+                print(f"""{Campers[i]['Nombre']} {Campers[i]['Apellido']}""")
         for b,item in enumerate(Trainers):
             if Trainers[b]["Ruta1"] == 1:
-                print(Trainers[b]["Nombre"])    
-                print(Trainers[b]["Apellido"])
+                print(f"""TRAINER: {Trainers[b]['Nombre']} {Trainers[b]['Apellido']}""")
         x = input("")
         print("RUTA 2: NetCore")
         for i,item in enumerate(Campers):
             if Campers[i]["Ruta"] == 2:
-                print(Campers[i]["Nombre"])
-                print(Campers[i]["Apellido"])
+                print(f"""{Campers[i]['Nombre']} {Campers[i]['Apellido']}""")
         for b,item in enumerate(Trainers):
             if Trainers[b]["Ruta1"] == 2:
-                print(Trainers[b]["Nombre"])    
-                print(Trainers[b]["Apellido"])
+                print(f"""TRAINER: {Trainers[b]['Nombre']} {Trainers[b]['Apellido']}""")
         x = input("")    
         print("RUTA 3: NodeJS")
         for i,item in enumerate(Campers):
             if Campers[i]["Ruta"] == 3:
-                print(Campers[i]["Nombre"])
-                print(Campers[i]["Apellido"])
+                print(f"""{Campers[i]['Nombre']} {Campers[i]['Apellido']}""")
         for b,item in enumerate(Trainers):
             if Trainers[b]["Ruta1"] == 3:
-                print(Trainers[b]["Nombre"])    
-                print(Trainers[b]["Apellido"])
+                print(f"""TRAINER: {Trainers[b]['Nombre']} {Trainers[b]['Apellido']}""")
         x = input("")         
 def rep6():
         os.system('clear')
@@ -1496,10 +1512,10 @@ def rep6():
             f.close()
         print("CAMPERS QUE HAN APROBADO MODULOS")
         for i, item in enumerate(Campers):
-            if Campers[i]["Mod aprobados"] >0:
+            if Campers[i]["Mod aprobados"] > 0:
                 print(f"""
                 {Campers[i]['Nombre']} {Campers[i]['Apellido']}
-                Modulos aprobados: {Campers[i]['Mod aprobado']}
+                Modulos aprobados: {Campers[i]['Mod aprobados']}
                 Ruta: {Campers[i]['Ruta']}
                 Trainer: {Campers[i]['Trainer'][0]}
                     """)

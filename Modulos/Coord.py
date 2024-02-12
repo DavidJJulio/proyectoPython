@@ -36,7 +36,7 @@ Administracion = ("""
           - - - - - - - - - - - - - - - - - - - - -
 1. ASIGNAR SALON CAMPER             2. PRUEBAS DE ADMISION
 3. ASIGNAR SALON TRAINER            4. FILTROS
-5. SALIR       
+5. CAMPERS RIESGO                   5. SALIR
 
 
 
@@ -84,6 +84,8 @@ def sistemaco():
                               case 4:
                                    funciones.filtros()
                               case 5:
+                                   funciones.campersriesgo()
+                              case 6:
                                    bandera = False
                     except:
                          print(ValueError)
