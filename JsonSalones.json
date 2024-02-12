@@ -45,6 +45,10 @@
         "Clase 2": [],
         "Clase 3": [],
         "Clase 4": [],
+        "Modulos1": 3,
+        "Modulos2": 0,
+        "Modulos3": 0,
+        "Modulos4": 0,
         "Codigo": 1
     },
     {
@@ -85,6 +89,10 @@
         "Clase 2": [],
         "Clase 3": [],
         "Clase 4": [],
+        "Modulos1": 0,
+        "Modulos2": 0,
+        "Modulos3": 0,
+        "Modulos4": 0,
         "Codigo": 2
     },
     {
@@ -125,6 +133,10 @@
         "Clase 2": [],
         "Clase 3": [],
         "Clase 4": [],
+        "Modulos1": 0,
+        "Modulos2": 0,
+        "Modulos3": 0,
+        "Modulos4": 0,
         "Codigo": 3
     }
 ]

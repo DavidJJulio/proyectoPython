@@ -46,14 +46,14 @@
         "Estado": {
             "1": false,
             "2": false,
-            "3": true,
-            "4": false,
+            "3": false,
+            "4": true,
             "5": false,
             "6": false,
             "7": false
         },
-        "Riesgo": 0,
-        "Mod aprobados": 1
+        "Riesgo": 1,
+        "Mod aprobados": 0
     },
     {
         "Nombre": "Hendrickson",
@@ -73,14 +73,14 @@
         "Estado": {
             "1": false,
             "2": false,
-            "3": false,
-            "4": true,
+            "3": true,
+            "4": false,
             "5": false,
             "6": false,
             "7": false
         },
-        "Riesgo": 1,
-        "Mod aprobados": 0
+        "Riesgo": 0,
+        "Mod aprobados": 1
     },
     {
         "Nombre": "Johan",
@@ -100,14 +100,14 @@
         "Estado": {
             "1": false,
             "2": false,
-            "3": false,
-            "4": true,
+            "3": true,
+            "4": false,
             "5": false,
             "6": false,
             "7": false
         },
-        "Riesgo": 1,
-        "Mod aprobados": 0
+        "Riesgo": 0,
+        "Mod aprobados": 1
     },
     {
         "Nombre": "William",
@@ -127,14 +127,14 @@
         "Estado": {
             "1": false,
             "2": false,
-            "3": false,
-            "4": true,
+            "3": true,
+            "4": false,
             "5": false,
             "6": false,
             "7": false
         },
-        "Riesgo": 1,
-        "Mod aprobados": 0
+        "Riesgo": 0,
+        "Mod aprobados": 1
     },
     {
         "Nombre": "Gabriel",
@@ -154,14 +154,14 @@
         "Estado": {
             "1": false,
             "2": false,
-            "3": true,
+            "3": false,
             "4": true,
             "5": false,
             "6": false,
             "7": false
         },
         "Riesgo": 1,
-        "Mod aprobados": 1
+        "Mod aprobados": 0
     },
     {
         "Nombre": "Karol",

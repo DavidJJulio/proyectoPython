@@ -454,12 +454,13 @@ Trainer: {Salones[i]["idT1"]}
 ---------------------""")
                     opc = int(input("Seleccione un salon"))
                     if Salones[opc-1]["Trainer1"] == True:
+                            Salones[opc-1]["Modulos1"] +=1
                             try:
                                 match(opc):
                                     case 1:
                                         for i, item in enumerate(Salones[opc-1]["Camp1"]):
                                             for b,item in enumerate(Campers):
-                                                if Salones[opc-1]["Camp1"][b] == Campers[i]["id"]:
+                                                if Salones[opc-1]["Camp1"][i] == Campers[b]["id"]:
                                                     a = int(input(f"Ingrese el valor de la prueba practica del estudiante({Campers[b]['Nombre']}): "))
                                                     d = int(input(f"Ingrese el valor de la prueba examen del estudiante({Campers[b]['Nombre']}): "))
                                                     c = int(input(f"Ingrese el promedio de las notas(Trabajos) del estudiante({Campers[b]['Nombre']}): "))
@@ -472,6 +473,7 @@ Trainer: {Salones[i]["idT1"]}
                                                         Campers[b]["Mod aprobados"] +=1
                                                     else:
                                                         Campers[b]["Estado"]["2"] = False
+                                                        Campers[b]["Estado"]["3"] = False
                                                         Campers[b]["Estado"]["4"] = True
                                                         Campers[b]["Riesgo"] += 1
                                                         
@@ -483,6 +485,7 @@ Trainer: {Salones[i]["idT1"]}
                                                             Campers[b]["Estado"]["5"] = False
                                                             Campers[b]["Estado"]["6"] = False
                                                             Campers[b]["Estado"]["7"] = True
+                                                            del Salones[opc-1]["Camp1"][i]
                                                 else:
                                                     pass
                                                             
@@ -514,6 +517,7 @@ Trainer: {Salones[i]["idT1"]}
                                                             Campers[b]["Estado"]["5"] = False
                                                             Campers[b]["Estado"]["6"] = False
                                                             Campers[b]["Estado"]["7"] = True
+                                                            del Salones[opc-1]["Camp1"][i]
                                     case 3:
                                         for i, item in enumerate(Salones[opc-1]["Camp1"]):
                                             for b,item in enumerate(Campers):
@@ -541,7 +545,7 @@ Trainer: {Salones[i]["idT1"]}
                                                             Campers[b]["Estado"]["5"] = False
                                                             Campers[b]["Estado"]["6"] = False
                                                             Campers[b]["Estado"]["7"] = True
-                        
+                                                            del Salones[opc-1]["Camp1"][i]
                             except:
                                 print("")
                     else:
@@ -565,8 +569,8 @@ Ruta: {Salones[i]["R2"]}
 Trainer: {Salones[i]["idT2"]}
 ---------------------""")
                     opc = int(input("Seleccione un salon"))
-                    for i,item in enumerate(Salones):
-                        if Salones[i]["Trainer2"] == True:
+                    if Salones[opc-1]["Trainer2"] == True:
+                            Salones[opc-1]["Modulos2"] +=1
                             try:
                                 match(opc):
                                     case 1:
@@ -596,6 +600,7 @@ Trainer: {Salones[i]["idT2"]}
                                                             Campers[b]["Estado"]["5"] = False
                                                             Campers[b]["Estado"]["6"] = False
                                                             Campers[b]["Estado"]["7"] = True
+                                                            del Salones[opc-1]["Camp2"][i]
 
                                     case 2:
                                         for i, item in enumerate(Salones[opc-1]["Camp2"]):
@@ -624,6 +629,7 @@ Trainer: {Salones[i]["idT2"]}
                                                             Campers[b]["Estado"]["5"] = False
                                                             Campers[b]["Estado"]["6"] = False
                                                             Campers[b]["Estado"]["7"] = True
+                                                            del Salones[opc-1]["Camp2"][i]
                                     case 3:
                                         for i, item in enumerate(Salones[opc-1]["Camp2"]):
                                             for b,item in enumerate(Campers):
@@ -651,10 +657,11 @@ Trainer: {Salones[i]["idT2"]}
                                                             Campers[b]["Estado"]["5"] = False
                                                             Campers[b]["Estado"]["6"] = False
                                                             Campers[b]["Estado"]["7"] = True
+                                                            del Salones[opc-1]["Camp2"][i]
                         
                             except:
                                 print("")
-                        else:
+                    else:
                             print("No existen salones con clases cursando en este")
                 except:
                     print("")
@@ -675,8 +682,8 @@ Ruta: {Salones[i]["R3"]}
 Trainer: {Salones[i]["idT3"]}
 ---------------------""")
                     opc = int(input("Seleccione un salon"))
-                    for i,item in enumerate(Salones):
-                        if Salones[i]["Trainer3"] == True:
+                    if Salones[opc-1]["Trainer3"] == True:
+                            Salones[opc-1]["Modulos3"] +=1
                             try:
                                 match(opc):
                                     case 1:
@@ -706,6 +713,7 @@ Trainer: {Salones[i]["idT3"]}
                                                             Campers[b]["Estado"]["5"] = False
                                                             Campers[b]["Estado"]["6"] = False
                                                             Campers[b]["Estado"]["7"] = True
+                                                            del Salones[opc-1]["Camp3"][i]
 
                                     case 2:
                                         for i, item in enumerate(Salones[opc-1]["Camp3"]):
@@ -734,6 +742,7 @@ Trainer: {Salones[i]["idT3"]}
                                                             Campers[b]["Estado"]["5"] = False
                                                             Campers[b]["Estado"]["6"] = False
                                                             Campers[b]["Estado"]["7"] = True
+                                                            del Salones[opc-1]["Camp3"][i]
                                     case 3:
                                         for i, item in enumerate(Salones[opc-1]["Camp3"]):
                                             for b,item in enumerate(Campers):
@@ -761,10 +770,11 @@ Trainer: {Salones[i]["idT3"]}
                                                             Campers[b]["Estado"]["5"] = False
                                                             Campers[b]["Estado"]["6"] = False
                                                             Campers[b]["Estado"]["7"] = True
+                                                            del Salones[opc-1]["Camp3"][i]
                         
                             except:
                                 print("")
-                        else:
+                    else:
                             print("No existen salones con clases cursando en este")
                 except:
                     print("")
@@ -785,8 +795,8 @@ Ruta: {Salones[i]["R4"]}
 Trainer: {Salones[i]["idT4"]}
 ---------------------""")
                     opc = int(input("Seleccione un salon"))
-                    for i,item in enumerate(Salones):
-                        if Salones[i]["Trainer4"] == True:
+                    if Salones[opc-1]["Trainer4"] == True:
+                            Salones[opc-1]["Modulos4"] +=1
                             try:
                                 match(opc):
                                     case 1:
@@ -817,6 +827,7 @@ Trainer: {Salones[i]["idT4"]}
                                                             Campers[b]["Estado"]["5"] = False
                                                             Campers[b]["Estado"]["6"] = False
                                                             Campers[b]["Estado"]["7"] = True
+                                                            del Salones[opc-1]["Camp4"][i]
 
                                     case 2:
                                         for i, item in enumerate(Salones[opc-1]["Camp4"]):
@@ -846,6 +857,7 @@ Trainer: {Salones[i]["idT4"]}
                                                             Campers[b]["Estado"]["5"] = False
                                                             Campers[b]["Estado"]["6"] = False
                                                             Campers[b]["Estado"]["7"] = True
+                                                            del Salones[opc-1]["Camp4"][i]
                                     case 3:
                                         for i, item in enumerate(Salones[opc-1]["Camp4"]):
                                             k +=1
@@ -874,10 +886,11 @@ Trainer: {Salones[i]["idT4"]}
                                                             Campers[b]["Estado"]["5"] = False
                                                             Campers[b]["Estado"]["6"] = False
                                                             Campers[b]["Estado"]["7"] = True
+                                                            del Salones[opc-1]["Camp4"][i]
                         
                             except:
                                 print("")
-                        else:
+                    else:
                             print("No existen salones con clases cursando en este")
                 except:
                     print("")
@@ -943,19 +956,23 @@ Trainer:
                         if Salones[i]["Codigo"] == u and Salones[i]["Capacidad1"] >0:
                             d = int(input("Ingrese el id del camper: "))
                             for b, item in enumerate(Campers):
-                                if Campers[b]["id"] == d and len(Campers[b]["Salon"]) == 0 and Campers[b]["Estado"]["2"] == True and Salones[i]["Trainer1"] == True:
+                                if Campers[b]["id"] == d and len(Campers[b]["Salon"]) == 0 and Campers[b]["Estado"]["2"] == True and Salones[i]["Trainer1"] == True and Salones[i]["Modulos1"] == 0:
                                     Campers[b]["Salon"].append(u)
                                     Campers[b]["Horario"] = True
                                     Salones[i]["Capacidad1"] -=1
                                     Salones[i]["Camp1"].append(Campers[b]["id"])
                                     Campers[b]["Trainer"].append(Salones[i]["idT1"][1])
                                     Campers[b]["Ruta"] = (Salones[i]["R1"])
-                                elif(Campers[b]["id"] == d and len(Campers[b]["Salon"]) == 0 and Campers[b]["Estado"]["2"] == True):
+                                elif Campers[b]["id"] == d and len(Campers[b]["Salon"]) == 0 and Campers[b]["Estado"]["2"] == True and Salones[i]["Trainer1"] == True and Salones[i]["Modulos1"] != 0:
+                                    print("Este salon no se encuentra disponible")
+                                    x = input("")
+                                    break
+                                elif(Campers[b]["id"] == d and len(Campers[b]["Salon"]) == 0 and Campers[b]["Estado"]["2"] == True and Salones[i]["Modulos1"] == 0):
                                     Campers[b]["Salon"].append(u)
                                     Campers[b]["Horario"] = True
                                     Salones[i]["Capacidad1"] -=1
                                     Salones[i]["Camp1"].append(Campers[b]["id"])
-                                elif(Campers[b]["id"] == d and len(Campers[b]["Salon"]) == 0 and Campers[b]["Estado"]["2"] != True):
+                                elif(Campers[b]["id"] == d and len(Campers[b]["Salon"]) == 0 and Campers[b]["Estado"]["2"] != True) and Salones[i]["Modulos1"] != 0:
                                     print("Este camper no esta disponible para agregarse a un salon")
                                     x = input("Ingrese enter para continuar...")
                                     break
@@ -992,14 +1009,18 @@ Trainer:
                         if Salones[i]["Codigo"] == u and Salones[i]["Capacidad2"] >0:
                             d = input("Ingrese el id del camper: ")
                             for b, item in enumerate(Campers):
-                                if Campers[b]["id"] == d and len(Campers[b]["Salon"]) == 0 and Campers[b]["Estado"]["2"] == True and Salones[i]["Trainer2"] == True:
+                                if Campers[b]["id"] == d and len(Campers[b]["Salon"]) == 0 and Campers[b]["Estado"]["2"] == True and Salones[i]["Trainer2"] == True and Salones[i]["Modulos2"] == 0:
                                     Campers[b]["Salon"].append(u)
                                     Campers[b]["Horario"] = True
                                     Salones[i]["Capacidad2"] -=1
                                     Salones[i]["Camp2"].append(Campers[b]["id"])
                                     Campers[b]["Trainer"].append(Salones[i]["idT2"][2])
                                     Campers[b]["Ruta"] = (Salones[i]["R2"])
-                                elif(Campers[b]["id"] == d and len(Campers[b]["Salon"]) == 0 and Campers[b]["Estado"]["2"] == True):
+                                elif Campers[b]["id"] == d and len(Campers[b]["Salon"]) == 0 and Campers[b]["Estado"]["2"] == True and Salones[i]["Trainer2"] == True and Salones[i]["Modulos2"] != 0:
+                                    print("Este salon no se encuentra disponible")
+                                    x = input("")
+                                    break
+                                elif(Campers[b]["id"] == d and len(Campers[b]["Salon"]) == 0 and Campers[b]["Estado"]["2"] == True and Salones[i]["Modulos2"] == 0):
                                     Campers[b]["Salon"].append(u)
                                     Campers[b]["Horario"] = True
                                     Salones[i]["Capacidad2"] -=1
@@ -1041,14 +1062,18 @@ Trainer:
                         if Salones[i]["Codigo"] == u and Salones[i]["Capacidad3"] >0:
                             d = input("Ingrese el id del camper: ")
                             for b, item in enumerate(Campers):
-                                if Campers[b]["id"] == d and len(Campers[b]["Salon"]) == 0 and Campers[b]["Estado"]["2"] == True and Salones[i]["Trainer3"] == True:
+                                if Campers[b]["id"] == d and len(Campers[b]["Salon"]) == 0 and Campers[b]["Estado"]["2"] == True and Salones[i]["Trainer3"] == True and Salones[i]["Modulos3"] == 0:
                                     Campers[b]["Salon"].append(u)
                                     Campers[b]["Horario"] = True
                                     Salones[i]["Capacidad3"] -=1
                                     Salones[i]["Camp3"].append(Campers[b]["id"])
                                     Campers[b]["Trainer"].append(Salones[i]["idT3"][1])
                                     Campers[b]["Ruta"] = (Salones[i]["R3"])
-                                elif(Campers[b]["id"] == d and len(Campers[b]["Salon"]) == 0 and Campers[b]["Estado"]["2"] == True):
+                                elif Campers[b]["id"] == d and len(Campers[b]["Salon"]) == 0 and Campers[b]["Estado"]["2"] == True and Salones[i]["Trainer3"] == True and Salones[i]["Modulos3"] != 0:
+                                    print("Este salon no se encuentra disponible")
+                                    x = input("")
+                                    break
+                                elif(Campers[b]["id"] == d and len(Campers[b]["Salon"]) == 0 and Campers[b]["Estado"]["2"] == True and Salones[i]["Modulos3"] == 0):
                                     Campers[b]["Salon"].append(u)
                                     Campers[b]["Horario"] = True
                                     Salones[i]["Capacidad3"] -=1
@@ -1089,14 +1114,18 @@ Trainer:
                         if Salones[i]["Codigo"] == u and Salones[i]["Capacidad4"] >0:
                             d = input("Ingrese el id del camper: ")
                             for b, item in enumerate(Campers):
-                                if Campers[b]["id"] == d and len(Campers[b]["Salon"]) == 0 and Campers[b]["Estado"]["2"] == True and Salones[i]["Trainer4"] == True:
+                                if Campers[b]["id"] == d and len(Campers[b]["Salon"]) == 0 and Campers[b]["Estado"]["2"] == True and Salones[i]["Trainer4"] == True and Salones[i]["Modulos4"] == 0:
                                     Campers[b]["Salon"].append(u)
                                     Campers[b]["Horario"] = True
                                     Salones[i]["Capacidad4"] -=1
                                     Salones[i]["Camp4"].append(Campers[b]["id"])
                                     Campers[b]["Trainer"].append(Salones[i]["idT4"][1])
                                     Campers[b]["Ruta"] = (Salones[i]["R1"])
-                                elif(Campers[b]["id"] == d and len(Campers[b]["Salon"]) == 0 and Campers[b]["Estado"]["2"] == True):
+                                elif Campers[b]["id"] == d and len(Campers[b]["Salon"]) == 0 and Campers[b]["Estado"]["2"] == True and Salones[i]["Trainer4"] == True and Salones[i]["Modulos4"] != 0:
+                                    print("Este salon no se encuentra disponible")
+                                    x = input("")
+                                    break
+                                elif(Campers[b]["id"] == d and len(Campers[b]["Salon"]) == 0 and Campers[b]["Estado"]["2"] == True and Salones[i]["Modulos4"] == 0):
                                     Campers[b]["Salon"].append(u)
                                     Campers[b]["Horario"] = True
                                     Salones[i]["Capacidad4"] -=1
