@@ -13,50 +13,11 @@
             "4": true
         },
         "Salon": [
-            3
-        ],
-        "Ruta": [
-            1
-        ]
-    },
-    {
-        "Nombre": "Johver",
-        "Apellido": "Pardo",
-        "Edad": 99,
-        "Genero": "Masculino",
-        "Numero": [],
-        "id": 123456789,
-        "Horario": {
-            "1": false,
-            "2": true,
-            "3": true,
-            "4": true
-        },
-        "Salon": [
-            2
-        ],
-        "Ruta": [
-            3
-        ]
-    },
-    {
-        "Nombre": "Pedro",
-        "Apellido": "Villa",
-        "Edad": 30,
-        "Genero": "Masculino",
-        "Numero": [],
-        "id": 987654321,
-        "Horario": {
-            "1": false,
-            "2": true,
-            "3": true,
-            "4": true
-        },
-        "Salon": [
             1
         ],
-        "Ruta": [
-            2
-        ]
+        "Ruta1": 1,
+        "Ruta2": 0,
+        "Ruta3": 0,
+        "Ruta4": 0
     }
 ]

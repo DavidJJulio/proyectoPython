@@ -1,69 +1,7 @@
 [
     {
         "Nombre": "Artemis",
-        "Capacidad": 33,
-        "Horario": {
-            "1": false,
-            "2": true,
-            "3": true,
-            "4": true
-        },
-        "Trainer1": true,
-        "Trainer2": false,
-        "Trainer3": false,
-        "Trainer4": false,
-        "idT1": [
-            987654321,"Pedro"
-        ],
-        "idT2": [],
-        "idT3": [],
-        "idT4": [],
-        "R1": [
-            3
-        ],
-        "R2": [],
-        "R3": [],
-        "R4": [],
-        "Camp1": [],
-        "Camp2": [],
-        "Camp3": [],
-        "Camp4": [],
-        "Codigo": 1
-    },
-    {
-        "Nombre": "Apolo",
-        "Capacidad": 33,
-        "Horario": {
-            "1": false,
-            "2": true,
-            "3": true,
-            "4": true
-        },
-        "Trainer1": true,
-        "Trainer2": false,
-        "Trainer3": false,
-        "Trainer4": false,
-        "idT1": [
-            123456789,"Johver"
-        ],
-        "idT2": [],
-        "idT3": [],
-        "idT4": [],
-        "R1": [
-            1
-        ],
-        "R2": [],
-        "R3": [],
-        "R4": [],
-        "Camp1": [],
-        "Camp2": [],
-        "Camp3": [],
-        "Camp4": [],
-        "Codigo": 2
-    },
-    {
-        "Nombre": "Sputnik",
-        "Capacidad1": 33,
+        "Capacidad1": 31,
         "Capacidad2": 33,
         "Capacidad3": 33,
         "Capacidad4": 33,
@@ -78,7 +16,8 @@
         "Trainer3": false,
         "Trainer4": false,
         "idT1": [
-            1070843572,"Miguel"
+            1070843572,
+            "Miguel"
         ],
         "idT2": [],
         "idT3": [],
@@ -89,10 +28,89 @@
         "R2": [],
         "R3": [],
         "R4": [],
+        "Camp1": [
+            1092732487,
+            123456789,
+            123456789
+        ],
+        "Camp2": [],
+        "Camp3": [],
+        "Camp4": [],
+        "Clase 1": [
+            "10/10/10",
+            "12/12/12"
+        ],
+        "Clase 2": [],
+        "Clase 3": [],
+        "Clase 4": [],
+        "Codigo": 1
+    },
+    {
+        "Nombre": "Apolo",
+        "Capacidad1": 33,
+        "Capacidad2": 33,
+        "Capacidad3": 33,
+        "Capacidad4": 33,
+        "Horario": {
+            "1": true,
+            "2": true,
+            "3": true,
+            "4": true
+        },
+        "Trainer1": false,
+        "Trainer2": false,
+        "Trainer3": false,
+        "Trainer4": false,
+        "idT1": [],
+        "idT2": [],
+        "idT3": [],
+        "idT4": [],
+        "R1": [],
+        "R2": [],
+        "R3": [],
+        "R4": [],
         "Camp1": [],
         "Camp2": [],
         "Camp3": [],
         "Camp4": [],
+        "Clase 1": [],
+        "Clase 2": [],
+        "Clase 3": [],
+        "Clase 4": [],
+        "Codigo": 2
+    },
+    {
+        "Nombre": "Sputnik",
+        "Capacidad1": 33,
+        "Capacidad2": 33,
+        "Capacidad3": 33,
+        "Capacidad4": 33,
+        "Horario": {
+            "1": true,
+            "2": true,
+            "3": true,
+            "4": true
+        },
+        "Trainer1": false,
+        "Trainer2": false,
+        "Trainer3": false,
+        "Trainer4": false,
+        "idT1": [],
+        "idT2": [],
+        "idT3": [],
+        "idT4": [],
+        "R1": [],
+        "R2": [],
+        "R3": [],
+        "R4": [],
+        "Camp1": [],
+        "Camp2": [],
+        "Camp3": [],
+        "Camp4": [],
+        "Clase 1": [],
+        "Clase 2": [],
+        "Clase 3": [],
+        "Clase 4": [],
         "Codigo": 3
     }
 ]

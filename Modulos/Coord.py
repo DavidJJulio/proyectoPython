@@ -29,14 +29,14 @@ Rutas = ("""
          """)
 
 Administracion = ("""
-- - - - - - - - - - - - - - - - - - - - -
-- - - - - - - - - - - - - - - - - - - - -
-- - - - - - - ADMINISTRACION - - - - - --
-- - - - - - - - - - - - - - - - - - - - -
-- - - - - - - - - - - - - - - - - - - - -
-1. GESTION SALONES             2. FILTROS
-3. PRUEBAS ADMISION            4. SALIR
-5. FILTRO
+          - - - - - - - - - - - - - - - - - - - - -
+          - - - - - - - - - - - - - - - - - - - - -
+          - - - - - - - ADMINISTRACION - - - - - --
+          - - - - - - - - - - - - - - - - - - - - -
+          - - - - - - - - - - - - - - - - - - - - -
+1. ASIGNAR SALON CAMPER             2. PRUEBAS DE ADMISION
+3. ASIGNAR SALON TRAINER            4. FILTROS
+5. SALIR       
 
 
 
@@ -78,9 +78,13 @@ def sistemaco():
                                    funciones.saloncamper()
                               case 2:
                                    os.system('clear')
-                                   funciones.filtros()
-                              case 3:
                                    funciones.prueba_admision()
+                              case 3:
+                                   funciones.salontrainer()
+                              case 4:
+                                   funciones.filtros()
+                              case 5:
+                                   bandera = False
                     except:
                          print(ValueError)
                case 3:
