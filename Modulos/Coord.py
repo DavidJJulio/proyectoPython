@@ -89,7 +89,7 @@ def sistemaco():
                          print(ValueError)
                case 3:
                     os.system('clear')
-                    pass
+                    
                case 4:
                     bandera = False
                     

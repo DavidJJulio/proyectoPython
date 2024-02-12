@@ -413,9 +413,465 @@ def salon():
           Trainers = json.loads(f.read())
           f.close()
 def filtros():
-     pass
-def notas():
-     pass
+    with open('JsonSalones.json', 'r') as f:
+          Salones = json.loads(f.read())
+          f.close()
+    with open('JsonCampers.json', 'r') as f:
+          Campers = json.loads(f.read())
+          f.close()
+    n = 0
+    k = 0
+    print("""
+---------------------------------------
+---------Horarios disponibles----------
+---------------------------------------
+
+1. 6 AM - 10 PM
+2. 10 AM - 2 PM
+3. 2 PM - 6 PM
+4. 6 PM - 10 PM
+
+""")
+    try:
+        opc = int(input("Que horario desea?: "))
+        match(opc):
+            case 1:
+                os.system('clear')
+                try:
+                    print("""
+        ----------------------------
+            SALONES DISPONIBLES
+        ----------------------------
+        """)
+                    for i,item in enumerate(Salones):
+                        if Salones[i]["Trainer1"] == True:
+                            n+=1
+                            print(f"""---------------------
+{n}.{Salones[i]["Nombre"]}
+Ruta: {Salones[i]["R1"]}
+Trainer: {Salones[i]["idT1"]}
+---------------------""")
+                    opc = int(input("Seleccione un salon"))
+                    for i,item in enumerate(Salones):
+                        if Salones[i]["Trainer1"] == True:
+                            try:
+                                match(opc):
+                                    case 1:
+                                        for i, item in enumerate(Salones[opc-1]["Camp1"]):
+                                            k +=1
+                                            for b,item in enumerate(Campers):
+                                                if Salones[opc-1]["Camp1"][i] == Campers[b]["id"]:
+                                                    a = int(input(f"Ingrese el valor de la prueba practica del estudiante({Campers[b]['Nombre']}): "))
+                                                    d = int(input(f"Ingrese el valor de la prueba examen del estudiante({Campers[b]['Nombre']}): "))
+                                                    c = int(input(f"Ingrese el promedio de las notas(Trabajos) del estudiante({Campers[b]['Nombre']}): "))
+                                                    a = a *0.6
+                                                    d = d *0.3
+                                                    c = c *0.3
+                                                    if((a+b+c) >60):
+                                                        Campers[b]["Estado"]["3"] = True
+                                                        Campers[b]["Estado"]["2"] = False
+                                                    else:
+                                                        Campers[b]["Estado"]["2"] = False
+                                                        Campers[b]["Estado"]["4"] = True
+                                                        Campers[b]["Riesgo"] += 1
+                                                        if Campers[b]["Riesgo"] == 2:
+                                                            Campers[b]["Estado"]["1"] = False
+                                                            Campers[b]["Estado"]["2"] = False
+                                                            Campers[b]["Estado"]["3"] = False
+                                                            Campers[b]["Estado"]["4"] = False
+                                                            Campers[b]["Estado"]["5"] = False
+                                                            Campers[b]["Estado"]["6"] = False
+                                                            Campers[b]["Estado"]["7"] = True
+                                                            
+
+                                    case 2:
+                                        for i, item in enumerate(Salones[opc-1]["Camp1"]):
+                                            k +=1
+                                            for b,item in enumerate(Campers):
+                                                if Salones[opc-1]["Camp1"][i] == Campers[b]["id"]:
+                                                    a = int(input(f"Ingrese el valor de la prueba practica del estudiante({Campers[b]['Nombre']}): "))
+                                                    d = int(input(f"Ingrese el valor de la prueba examen del estudiante({Campers[b]['Nombre']}): "))
+                                                    c = int(input(f"Ingrese el promedio de las notas(Trabajos) del estudiante({Campers[b]['Nombre']}): "))
+                                                    a = a *0.6
+                                                    d = d *0.3
+                                                    c = c *0.3
+                                                    if((a+b+c) >60):
+                                                        Campers[b]["Estado"]["3"] = True
+                                                        Campers[b]["Estado"]["2"] = False
+                                                    else:
+                                                        Campers[b]["Estado"]["2"] = False
+                                                        Campers[b]["Estado"]["4"] = True
+                                                        Campers[b]["Riesgo"] += 1
+                                                        if Campers[b]["Riesgo"] == 2:
+                                                            Campers[b]["Estado"]["1"] = False
+                                                            Campers[b]["Estado"]["2"] = False
+                                                            Campers[b]["Estado"]["3"] = False
+                                                            Campers[b]["Estado"]["4"] = False
+                                                            Campers[b]["Estado"]["5"] = False
+                                                            Campers[b]["Estado"]["6"] = False
+                                                            Campers[b]["Estado"]["7"] = True
+                                    case 3:
+                                        for i, item in enumerate(Salones[opc-1]["Camp1"]):
+                                            k +=1
+                                            for b,item in enumerate(Campers):
+                                                if Salones[opc-1]["Camp1"][i] == Campers[b]["id"]:
+                                                    a = int(input(f"Ingrese el valor de la prueba practica del estudiante({Campers[b]['Nombre']}): "))
+                                                    d = int(input(f"Ingrese el valor de la prueba examen del estudiante({Campers[b]['Nombre']}): "))
+                                                    c = int(input(f"Ingrese el promedio de las notas(Trabajos) del estudiante({Campers[b]['Nombre']}): "))
+                                                    a = a *0.6
+                                                    d = d *0.3
+                                                    c = c *0.3
+                                                    if((a+b+c) >60):
+                                                        Campers[b]["Estado"]["3"] = True
+                                                        Campers[b]["Estado"]["2"] = False
+                                                    else:
+                                                        Campers[b]["Estado"]["2"] = False
+                                                        Campers[b]["Estado"]["4"] = True
+                                                        Campers[b]["Riesgo"] += 1
+                                                        if Campers[b]["Riesgo"] == 2:
+                                                            Campers[b]["Estado"]["1"] = False
+                                                            Campers[b]["Estado"]["2"] = False
+                                                            Campers[b]["Estado"]["3"] = False
+                                                            Campers[b]["Estado"]["4"] = False
+                                                            Campers[b]["Estado"]["5"] = False
+                                                            Campers[b]["Estado"]["6"] = False
+                                                            Campers[b]["Estado"]["7"] = True
+                        
+                            except:
+                                print("")
+                        else:
+                            print("No existen salones con clases cursando en este")
+                except:
+                    print("")
+            case 2:
+                os.system('clear')
+                try:
+                    print("""
+        ----------------------------
+            SALONES DISPONIBLES
+        ----------------------------
+        """)
+                    for i,item in enumerate(Salones):
+                        if Salones[i]["Trainer2"] == True:
+                            n+=1
+                            print(f"""---------------------
+{n}.{Salones[i]["Nombre"]}
+Ruta: {Salones[i]["R2"]}
+Trainer: {Salones[i]["idT2"]}
+---------------------""")
+                    opc = int(input("Seleccione un salon"))
+                    for i,item in enumerate(Salones):
+                        if Salones[i]["Trainer2"] == True:
+                            try:
+                                match(opc):
+                                    case 1:
+                                        for i, item in enumerate(Salones[opc-1]["Camp2"]):
+                                            k +=1
+                                            for b,item in enumerate(Campers):
+                                                if Salones[opc-1]["Camp2"][i] == Campers[b]["id"]:
+                                                    a = int(input(f"Ingrese el valor de la prueba practica del estudiante({Campers[b]['Nombre']}): "))
+                                                    d = int(input(f"Ingrese el valor de la prueba examen del estudiante({Campers[b]['Nombre']}): "))
+                                                    c = int(input(f"Ingrese el promedio de las notas(Trabajos) del estudiante({Campers[b]['Nombre']}): "))
+                                                    a = a *0.6
+                                                    d = d *0.3
+                                                    c = c *0.3
+                                                    if((a+b+c) >60):
+                                                        Campers[b]["Estado"]["3"] = True
+                                                        Campers[b]["Estado"]["2"] = False
+                                                    else:
+                                                        Campers[b]["Estado"]["2"] = False
+                                                        Campers[b]["Estado"]["4"] = True
+                                                        Campers[b]["Riesgo"] += 1
+                                                        if Campers[b]["Riesgo"] == 2:
+                                                            Campers[b]["Estado"]["1"] = False
+                                                            Campers[b]["Estado"]["2"] = False
+                                                            Campers[b]["Estado"]["3"] = False
+                                                            Campers[b]["Estado"]["4"] = False
+                                                            Campers[b]["Estado"]["5"] = False
+                                                            Campers[b]["Estado"]["6"] = False
+                                                            Campers[b]["Estado"]["7"] = True
+
+                                    case 2:
+                                        for i, item in enumerate(Salones[opc-1]["Camp2"]):
+                                            k +=1
+                                            for b,item in enumerate(Campers):
+                                                if Salones[opc-1]["Camp2"][i] == Campers[b]["id"]:
+                                                    a = int(input(f"Ingrese el valor de la prueba practica del estudiante({Campers[b]['Nombre']}): "))
+                                                    d = int(input(f"Ingrese el valor de la prueba examen del estudiante({Campers[b]['Nombre']}): "))
+                                                    c = int(input(f"Ingrese el promedio de las notas(Trabajos) del estudiante({Campers[b]['Nombre']}): "))
+                                                    a = a *0.6
+                                                    d = d *0.3
+                                                    c = c *0.3
+                                                    if((a+b+c) >60):
+                                                        Campers[b]["Estado"]["3"] = True
+                                                        Campers[b]["Estado"]["2"] = False
+                                                    else:
+                                                        Campers[b]["Estado"]["2"] = False
+                                                        Campers[b]["Estado"]["4"] = True
+                                                        Campers[b]["Riesgo"] += 1
+                                                        if Campers[b]["Riesgo"] == 2:
+                                                            Campers[b]["Estado"]["1"] = False
+                                                            Campers[b]["Estado"]["2"] = False
+                                                            Campers[b]["Estado"]["3"] = False
+                                                            Campers[b]["Estado"]["4"] = False
+                                                            Campers[b]["Estado"]["5"] = False
+                                                            Campers[b]["Estado"]["6"] = False
+                                                            Campers[b]["Estado"]["7"] = True
+                                    case 3:
+                                        for i, item in enumerate(Salones[opc-1]["Camp2"]):
+                                            k +=1
+                                            for b,item in enumerate(Campers):
+                                                if Salones[opc-1]["Camp2"][i] == Campers[b]["id"]:
+                                                    a = int(input(f"Ingrese el valor de la prueba practica del estudiante({Campers[b]['Nombre']}): "))
+                                                    d = int(input(f"Ingrese el valor de la prueba examen del estudiante({Campers[b]['Nombre']}): "))
+                                                    c = int(input(f"Ingrese el promedio de las notas(Trabajos) del estudiante({Campers[b]['Nombre']}): "))
+                                                    a = a *0.6
+                                                    d = d *0.3
+                                                    c = c *0.3
+                                                    if((a+b+c) >60):
+                                                        Campers[b]["Estado"]["3"] = True
+                                                        Campers[b]["Estado"]["2"] = False
+                                                    else:
+                                                        Campers[b]["Estado"]["2"] = False
+                                                        Campers[b]["Estado"]["4"] = True
+                                                        Campers[b]["Riesgo"] += 1
+                                                        if Campers[b]["Riesgo"] == 2:
+                                                            Campers[b]["Estado"]["1"] = False
+                                                            Campers[b]["Estado"]["2"] = False
+                                                            Campers[b]["Estado"]["3"] = False
+                                                            Campers[b]["Estado"]["4"] = False
+                                                            Campers[b]["Estado"]["5"] = False
+                                                            Campers[b]["Estado"]["6"] = False
+                                                            Campers[b]["Estado"]["7"] = True
+                        
+                            except:
+                                print("")
+                        else:
+                            print("No existen salones con clases cursando en este")
+                except:
+                    print("")
+            case 3:
+                os.system('clear')
+                try:
+                    print("""
+        ----------------------------
+            SALONES DISPONIBLES
+        ----------------------------
+        """)
+                    for i,item in enumerate(Salones):
+                        if Salones[i]["Trainer3"] == True:
+                            n+=1
+                            print(f"""---------------------
+{n}.{Salones[i]["Nombre"]}
+Ruta: {Salones[i]["R3"]}
+Trainer: {Salones[i]["idT3"]}
+---------------------""")
+                    opc = int(input("Seleccione un salon"))
+                    for i,item in enumerate(Salones):
+                        if Salones[i]["Trainer3"] == True:
+                            try:
+                                match(opc):
+                                    case 1:
+                                        for i, item in enumerate(Salones[opc-1]["Camp3"]):
+                                            k +=1
+                                            for b,item in enumerate(Campers):
+                                                if Salones[opc-1]["Camp3"][i] == Campers[b]["id"]:
+                                                    a = int(input(f"Ingrese el valor de la prueba practica del estudiante({Campers[b]['Nombre']}): "))
+                                                    d = int(input(f"Ingrese el valor de la prueba examen del estudiante({Campers[b]['Nombre']}): "))
+                                                    c = int(input(f"Ingrese el promedio de las notas(Trabajos) del estudiante({Campers[b]['Nombre']}): "))
+                                                    a = a *0.6
+                                                    d = d *0.3
+                                                    c = c *0.3
+                                                    if((a+b+c) >60):
+                                                        Campers[b]["Estado"]["3"] = True
+                                                        Campers[b]["Estado"]["2"] = False
+                                                    else:
+                                                        Campers[b]["Estado"]["2"] = False
+                                                        Campers[b]["Estado"]["4"] = True
+                                                        Campers[b]["Riesgo"] += 1
+                                                        if Campers[b]["Riesgo"] == 2:
+                                                            Campers[b]["Estado"]["1"] = False
+                                                            Campers[b]["Estado"]["2"] = False
+                                                            Campers[b]["Estado"]["3"] = False
+                                                            Campers[b]["Estado"]["4"] = False
+                                                            Campers[b]["Estado"]["5"] = False
+                                                            Campers[b]["Estado"]["6"] = False
+                                                            Campers[b]["Estado"]["7"] = True
+
+                                    case 2:
+                                        for i, item in enumerate(Salones[opc-1]["Camp3"]):
+                                            k +=1
+                                            for b,item in enumerate(Campers):
+                                                if Salones[opc-1]["Camp3"][i] == Campers[b]["id"]:
+                                                    a = int(input(f"Ingrese el valor de la prueba practica del estudiante({Campers[b]['Nombre']}): "))
+                                                    d = int(input(f"Ingrese el valor de la prueba examen del estudiante({Campers[b]['Nombre']}): "))
+                                                    c = int(input(f"Ingrese el promedio de las notas(Trabajos) del estudiante({Campers[b]['Nombre']}): "))
+                                                    a = a *0.6
+                                                    d = d *0.3
+                                                    c = c *0.3
+                                                    if((a+b+c) >60):
+                                                        Campers[b]["Estado"]["3"] = True
+                                                        Campers[b]["Estado"]["2"] = False
+                                                    else:
+                                                        Campers[b]["Estado"]["2"] = False
+                                                        Campers[b]["Estado"]["4"] = True
+                                                        Campers[b]["Riesgo"] += 1
+                                                        if Campers[b]["Riesgo"] == 2:
+                                                            Campers[b]["Estado"]["1"] = False
+                                                            Campers[b]["Estado"]["2"] = False
+                                                            Campers[b]["Estado"]["3"] = False
+                                                            Campers[b]["Estado"]["4"] = False
+                                                            Campers[b]["Estado"]["5"] = False
+                                                            Campers[b]["Estado"]["6"] = False
+                                                            Campers[b]["Estado"]["7"] = True
+                                    case 3:
+                                        for i, item in enumerate(Salones[opc-1]["Camp3"]):
+                                            k +=1
+                                            for b,item in enumerate(Campers):
+                                                if Salones[opc-1]["Camp3"][i] == Campers[b]["id"]:
+                                                    a = int(input(f"Ingrese el valor de la prueba practica del estudiante({Campers[b]['Nombre']}): "))
+                                                    d = int(input(f"Ingrese el valor de la prueba examen del estudiante({Campers[b]['Nombre']}): "))
+                                                    c = int(input(f"Ingrese el promedio de las notas(Trabajos) del estudiante({Campers[b]['Nombre']}): "))
+                                                    a = a *0.6
+                                                    d = d *0.3
+                                                    c = c *0.3
+                                                    if((a+b+c) >60):
+                                                        Campers[b]["Estado"]["3"] = True
+                                                        Campers[b]["Estado"]["2"] = False
+                                                    else:
+                                                        Campers[b]["Estado"]["2"] = False
+                                                        Campers[b]["Estado"]["4"] = True
+                                                        Campers[b]["Riesgo"] += 1
+                                                        if Campers[b]["Riesgo"] == 2:
+                                                            Campers[b]["Estado"]["1"] = False
+                                                            Campers[b]["Estado"]["2"] = False
+                                                            Campers[b]["Estado"]["3"] = False
+                                                            Campers[b]["Estado"]["4"] = False
+                                                            Campers[b]["Estado"]["5"] = False
+                                                            Campers[b]["Estado"]["6"] = False
+                                                            Campers[b]["Estado"]["7"] = True
+                        
+                            except:
+                                print("")
+                        else:
+                            print("No existen salones con clases cursando en este")
+                except:
+                    print("")
+            case 4:
+                os.system('clear')
+                try:
+                    print("""
+        ----------------------------
+            SALONES DISPONIBLES
+        ----------------------------
+        """)
+                    for i,item in enumerate(Salones):
+                        if Salones[i]["Trainer4"] == True:
+                            n+=1
+                            print(f"""---------------------
+{n}.{Salones[i]["Nombre"]}
+Ruta: {Salones[i]["R4"]}
+Trainer: {Salones[i]["idT4"]}
+---------------------""")
+                    opc = int(input("Seleccione un salon"))
+                    for i,item in enumerate(Salones):
+                        if Salones[i]["Trainer4"] == True:
+                            try:
+                                match(opc):
+                                    case 1:
+                                        for i, item in enumerate(Salones[opc-1]["Camp4"]):
+                                            k +=1
+                                            for b,item in enumerate(Campers):
+                                                if Salones[opc-1]["Camp4"][i] == Campers[b]["id"]:
+                                                    a = int(input(f"Ingrese el valor de la prueba practica del estudiante({Campers[b]['Nombre']}): "))
+                                                    d = int(input(f"Ingrese el valor de la prueba examen del estudiante({Campers[b]['Nombre']}): "))
+                                                    c = int(input(f"Ingrese el promedio de las notas(Trabajos) del estudiante({Campers[b]['Nombre']}): "))
+                                                    a = a *0.6
+                                                    d = d *0.3
+                                                    c = c *0.3
+                                                    if((a+b+c) >60):
+                                                        Campers[b]["Estado"]["3"] = True
+                                                        Campers[b]["Estado"]["2"] = False
+                                                    else:
+                                                        Campers[b]["Estado"]["2"] = False
+                                                        Campers[b]["Estado"]["4"] = True
+                                                        Campers[b]["Riesgo"] += 1
+                                                        if Campers[b]["Riesgo"] == 2:
+                                                            Campers[b]["Estado"]["1"] = False
+                                                            Campers[b]["Estado"]["2"] = False
+                                                            Campers[b]["Estado"]["3"] = False
+                                                            Campers[b]["Estado"]["4"] = False
+                                                            Campers[b]["Estado"]["5"] = False
+                                                            Campers[b]["Estado"]["6"] = False
+                                                            Campers[b]["Estado"]["7"] = True
+
+                                    case 2:
+                                        for i, item in enumerate(Salones[opc-1]["Camp4"]):
+                                            k +=1
+                                            for b,item in enumerate(Campers):
+                                                if Salones[opc-1]["Camp4"][i] == Campers[b]["id"]:
+                                                    a = int(input(f"Ingrese el valor de la prueba practica del estudiante({Campers[b]['Nombre']}): "))
+                                                    d = int(input(f"Ingrese el valor de la prueba examen del estudiante({Campers[b]['Nombre']}): "))
+                                                    c = int(input(f"Ingrese el promedio de las notas(Trabajos) del estudiante({Campers[b]['Nombre']}): "))
+                                                    a = a *0.6
+                                                    d = d *0.3
+                                                    c = c *0.3
+                                                    if((a+b+c) >60):
+                                                        Campers[b]["Estado"]["3"] = True
+                                                        Campers[b]["Estado"]["2"] = False
+                                                    else:
+                                                        Campers[b]["Estado"]["2"] = False
+                                                        Campers[b]["Estado"]["4"] = True
+                                                        Campers[b]["Riesgo"] += 1
+                                                        if Campers[b]["Riesgo"] == 2:
+                                                            Campers[b]["Estado"]["1"] = False
+                                                            Campers[b]["Estado"]["2"] = False
+                                                            Campers[b]["Estado"]["3"] = False
+                                                            Campers[b]["Estado"]["4"] = False
+                                                            Campers[b]["Estado"]["5"] = False
+                                                            Campers[b]["Estado"]["6"] = False
+                                                            Campers[b]["Estado"]["7"] = True
+                                    case 3:
+                                        for i, item in enumerate(Salones[opc-1]["Camp4"]):
+                                            k +=1
+                                            for b,item in enumerate(Campers):
+                                                if Salones[opc-1]["Camp4"][i] == Campers[b]["id"]:
+                                                    a = int(input(f"Ingrese el valor de la prueba practica del estudiante({Campers[b]['Nombre']}): "))
+                                                    d = int(input(f"Ingrese el valor de la prueba examen del estudiante({Campers[b]['Nombre']}): "))
+                                                    c = int(input(f"Ingrese el promedio de las notas(Trabajos) del estudiante({Campers[b]['Nombre']}): "))
+                                                    a = a *0.6
+                                                    d = d *0.3
+                                                    c = c *0.3
+                                                    if((a+b+c) >60):
+                                                        Campers[b]["Estado"]["3"] = True
+                                                        Campers[b]["Estado"]["2"] = False
+                                                    else:
+                                                        Campers[b]["Estado"]["2"] = False
+                                                        Campers[b]["Estado"]["4"] = True
+                                                        Campers[b]["Riesgo"] += 1
+                                                        if Campers[b]["Riesgo"] == 2:
+                                                            Campers[b]["Estado"]["1"] = False
+                                                            Campers[b]["Estado"]["2"] = False
+                                                            Campers[b]["Estado"]["3"] = False
+                                                            Campers[b]["Estado"]["4"] = False
+                                                            Campers[b]["Estado"]["5"] = False
+                                                            Campers[b]["Estado"]["6"] = False
+                                                            Campers[b]["Estado"]["7"] = True
+                        
+                            except:
+                                print("")
+                        else:
+                            print("No existen salones con clases cursando en este")
+                except:
+                    print("")
+    except:
+        print("")
+    with open('JsonSalones.json', 'w') as f:
+          json.dump(Salones, f, indent=4)
+          f.close()
+    with open('JsonCampers.json', 'w') as fire:
+          json.dump(Campers, fire, indent=4)
+          fire.close()
 def saloncamper():
     with open('JsonSalones.json', 'r') as f:
           Salones = json.loads(f.read())

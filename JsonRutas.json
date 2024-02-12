@@ -9,6 +9,7 @@
                     "Python",
                     "Algoritmia"
                 ],
+                "filtro": false,
                 "Codigo": 1
             },
             {
@@ -18,6 +19,7 @@
                     "CSS",
                     "Bootstrap"
                 ],
+                "filtro": false,
                 "Codigo": 2
             },
             {
@@ -25,6 +27,7 @@
                 "Temas del modulo": [
                     "Mysql"
                 ],
+                "filtro": false,
                 "Codigo": 3
             },
             {
@@ -33,6 +36,7 @@
                     "MongoDb",
                     "Postgresql"
                 ],
+                "filtro": false,
                 "Codigo": 4
             },
             {
@@ -40,6 +44,7 @@
                 "Temas del modulo": [
                     "Java"
                 ],
+                "filtro": false,
                 "Codigo": 5
             },
             {
@@ -47,6 +52,7 @@
                 "Temas del modulo": [
                     "Spring Boot"
                 ],
+                "filtro": false,
                 "Codigo": 9
             }
         ],
@@ -62,6 +68,7 @@
                     "Python",
                     "Algoritmia"
                 ],
+                "filtro": false,
                 "Codigo": 1
             },
             {
@@ -71,6 +78,7 @@
                     "CSS",
                     "Bootstrap"
                 ],
+                "filtro": false,
                 "Codigo": 2
             },
             {
@@ -78,6 +86,7 @@
                 "Temas del modulo": [
                     "Mysql"
                 ],
+                "filtro": false,
                 "Codigo": 3
             },
             {
@@ -86,6 +95,7 @@
                     "MongoDb",
                     "Postgresql"
                 ],
+                "filtro": false,
                 "Codigo": 4
             },
             {
@@ -93,6 +103,7 @@
                 "Temas del modulo": [
                     "JavaScript"
                 ],
+                "filtro": false,
                 "Codigo": 6
             },
             {
@@ -100,6 +111,7 @@
                 "Temas del modulo": [
                     "NetCore"
                 ],
+                "filtro": false,
                 "Codigo": 8
             }
         ],
@@ -115,6 +127,7 @@
                     "Python",
                     "Algoritmia"
                 ],
+                "filtro": false,
                 "Codigo": 1
             },
             {
@@ -124,6 +137,7 @@
                     "CSS",
                     "Bootstrap"
                 ],
+                "filtro": false,
                 "Codigo": 2
             },
             {
@@ -131,6 +145,7 @@
                 "Temas del modulo": [
                     "Mysql"
                 ],
+                "filtro": false,
                 "Codigo": 3
             },
             {
@@ -139,6 +154,7 @@
                     "MongoDb",
                     "Postgresql"
                 ],
+                "filtro": false,
                 "Codigo": 4
             },
             {
@@ -146,6 +162,7 @@
                 "Temas del modulo": [
                     "JavaScript"
                 ],
+                "filtro": false,
                 "Codigo": 6
             },
             {
@@ -153,6 +170,7 @@
                 "Temas del modulo": [
                     "NodeJS"
                 ],
+                "filtro": false,
                 "Codigo": 10
             }
         ],
