@@ -13,7 +13,7 @@ Portada = ("""
 
            
         1. COORDINACIÓN    2. CAMPERS     
-        3. TRAINERS        4. GUIA DE USO
+        3. TRAINERS        
 
 """)
 
