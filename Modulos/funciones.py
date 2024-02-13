@@ -125,11 +125,10 @@ Edad {Lista[i]['Edad']}, id {Lista[i]['id']}
                 except:
                     print("No ingresó un numero valido.")
                     n = input("")
-        
             else:
-                    print("No existe este trainer")
+                    print("Este trainer no existe")
                     n = input("")
-                    bandera = False
+                    break
     with open('JsonTrainers.json', 'w') as file:
             json.dump(Lista, file, indent=4)
             file.close()
@@ -169,7 +168,7 @@ Edad {Lista[i]['Edad']}, id {Lista[i]['id']}
         else:
                     print("Este camper no existe")
                     n = input("")
-                    bandera = False
+                    break
     with open('JsonCampers.json', 'w') as file:
             json.dump(Lista, file, indent=4)
             file.close()
@@ -252,100 +251,102 @@ Edad {Lista[i]['Edad']}, id {Lista[i]['id']}
                     n = input("")
         
             else:
-                    print("ok")
+                    print("Este trainer no existe")
                     n = input("")
-                    bandera = False
+                    break
     with open('JsonTrainers.json', 'w') as file:
             json.dump(Lista, file, indent=4)
             file.close()
 def actualizarcamper():
     bandera = True
-    with open('JsonCampers.json', 'r') as f:
-        Lista = json.loads(f.read())
-        os.system('clear')
-        f.close()
-    for i, item in enumerate(Lista):
-            print(f"""
-------------------
-{Lista[i]['Nombre']}, {Lista[i]['Apellido']}
-Edad {Lista[i]['Edad']}, {Lista[i]['id']}
-------------------
-""")
-    identificacion = int(input("Ingrese el id del camper que desea actualizar: "))
-    for i, item in enumerate(Lista):
-            if(Lista[i]["id"] == identificacion):
+    while (bandera):
+        with open('JsonCampers.json', 'r') as f:
+            Lista = json.loads(f.read())
+            os.system('clear')
+            f.close()
+        for i, item in enumerate(Lista):
                 print(f"""
----------------------
-{Lista[i]['Nombre']}, {Lista[i]['Apellido']}
-Edad {Lista[i]['Edad']}, id {Lista[i]['id']}
----------------------
-""")
-    try:
-        x = int(input("Desea actualizar este Camper?  1.Si  2.No: "))
-        if(x == 1):
-                        del Lista[i]
-                        Lista.append({
-           "Nombre" : input("Ingrese el nombre del Camper: "),
-           "Apellido" : input("Ingrese el apellido del Camper: "),
-           "Edad" : int(input("Ingrese la edad del Camper: ")),
-           "Genero" : input("Ingrese el genero del Camper: "),
-           "Numero" : [
-              {
-                 f"{'fijo' if(int(input('1.Fijo  0.Celular: ')))else 'Celular'}":
-                    input(f'Numero de contacto {x+1}: ')
-              }
-              for x in range((int(input("¿Cuantos numeros de contacto tiene?: "))))
-           ],
-           "id" : int(input("Ingrese el numero de identidad del Camper: ")),
-           "Salon" : [],
-           "Trainer" : [],
-           "Horario" : {
-               "1" : False,},
-           "Ruta" : 0,
-           "Estado" : {
-               1 : False,
-               2 : False,
-               3 : False,
-               4 : False,
-               5 : False,
-               6 : False
-           },
-           "Riesgo" : 0
-        })
-                        x = len(Lista)
-                        if Lista[x-1]["Edad"] < 18:
-                            Lista[x-1].update({
-                                "Acudiente" : input("Ingrese el nombre de su acudiente: "),
-                                "CelAcudiente" : input("Ingrese el numero telefonico de el acudiente: ")
-                                })
-                        n = int(input
-("""
- -------------
- 1. Inscrito
- 2. Aprobado
- 3. Cursando
- 4. Graduado
- 5. Expulsado
- 6. Retirado
- -------------
- Ingrese el estado del camper: 
- """))
-                        for i in Lista[x-1]["Estado"]:
-                            if n == i:
-                                Lista[x-1]["Estado"][i] = True
-        
-        elif(x == 2):
-            bandera = False
-        else:
-            print("ok")
-            n = input("")
-            bandera = False
-    except:
-        print("No ingresó un numero valido.")
-        n = input("")
-    with open('JsonCampers.json', 'w') as file:
-            json.dump(Lista, file, indent=4)
-            file.close()
+    ------------------
+    {Lista[i]['Nombre']}, {Lista[i]['Apellido']}
+    Edad {Lista[i]['Edad']}, {Lista[i]['id']}
+    ------------------
+    """)
+        identificacion = int(input("Ingrese el id del camper que desea actualizar: "))
+        for i, item in enumerate(Lista):
+                if(Lista[i]["id"] == identificacion):
+                    print(f"""
+    ---------------------
+    {Lista[i]['Nombre']}, {Lista[i]['Apellido']}
+    Edad {Lista[i]['Edad']}, id {Lista[i]['id']}
+    ---------------------
+    """)
+                    try:
+                        x = int(input("Desea actualizar este Camper?  1.Si  2.No: "))
+                        if(x == 1):
+                                        del Lista[i]
+                                        Lista.append({
+                        "Nombre" : input("Ingrese el nombre del Camper: "),
+                        "Apellido" : input("Ingrese el apellido del Camper: "),
+                        "Edad" : int(input("Ingrese la edad del Camper: ")),
+                        "Genero" : input("Ingrese el genero del Camper: "),
+                        "Numero" : [
+                            {
+                                f"{'fijo' if(int(input('1.Fijo  0.Celular: ')))else 'Celular'}":
+                                    input(f'Numero de contacto {x+1}: ')
+                            }
+                            for x in range((int(input("¿Cuantos numeros de contacto tiene?: "))))
+                        ],
+                        "id" : int(input("Ingrese el numero de identidad del Camper: ")),
+                        "Salon" : [],
+                        "Trainer" : [],
+                        "Horario" : {
+                            "1" : False,},
+                        "Ruta" : 0,
+                        "Estado" : {
+                            1 : False,
+                            2 : False,
+                            3 : False,
+                            4 : False,
+                            5 : False,
+                            6 : False
+                        },
+                        "Riesgo" : 0
+                        })
+                                        x = len(Lista)
+                                        if Lista[x-1]["Edad"] < 18:
+                                            Lista[x-1].update({
+                                                "Acudiente" : input("Ingrese el nombre de su acudiente: "),
+                                                "CelAcudiente" : input("Ingrese el numero telefonico de el acudiente: ")
+                                                })
+                                        n = int(input
+                ("""
+                -------------
+                1. Inscrito
+                2. Aprobado
+                3. Cursando
+                4. Graduado
+                5. Expulsado
+                6. Retirado
+                -------------
+                Ingrese el estado del camper: 
+                """))
+                                        for i in Lista[x-1]["Estado"]:
+                                            if n == i:
+                                                Lista[x-1]["Estado"][i] = True
+                
+                        elif(x == 2):
+                            break
+                
+                    except:
+                        print("No ingresó un numero valido.")
+                    n = input("")
+                else:
+                        print("Este camper no existe")
+                        n = input("")
+                        break
+        with open('JsonCampers.json', 'w') as file:
+                json.dump(Lista, file, indent=4)
+                file.close()
 def crearmodulos():
             with open('JsonModulos.json', 'r') as f:
                 Lista = json.loads(f.read())
