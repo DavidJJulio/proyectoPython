@@ -54,6 +54,7 @@ def crearcamper():
         ],
         "id" : int(input("Ingrese el numero de identidad del Camper: ")),
         "Salon" : [],
+        "Direccion": input("Ingrese la direccion del camper: "),
         "Trainer" : [],
         "Horario" : {
             "1" : False},
@@ -298,6 +299,7 @@ def actualizarcamper():
                         ],
                         "id" : int(input("Ingrese el numero de identidad del Camper: ")),
                         "Salon" : [],
+                        "Direccion": input("Ingrese la direccion del camper: "),
                         "Trainer" : [],
                         "Horario" : {
                             "1" : False,},
